@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { studio } from "@/lib/data";
+import { studio } from "@/lib/studio";
 
 const channels = [
   {

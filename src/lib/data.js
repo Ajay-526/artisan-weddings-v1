@@ -1,8 +1,4 @@
-export const studio = {
-  whatsapp: "919999999999",
-  telegram: "artisanweddings",
-  email: "hello@artisanweddings.in",
-};
+export { studio } from "@/lib/studio";
 
 export const ceremonies = [
   {
