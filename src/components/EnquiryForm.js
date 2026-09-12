@@ -134,7 +134,13 @@ export default function EnquiryForm() {
       <input required name="name" placeholder="Your Name *" />
       <input required type="email" name="email" placeholder="Email Address *" />
       <input required name="phone" placeholder="Phone Number *" />
-      <input required type="date" name="date" aria-label="Wedding Date" />
+      <input
+        required
+        type="date"
+        name="date"
+        aria-label="Wedding Date"
+        placeholder="Wedding Date"
+      />
       <input name="venue" placeholder="City / Venue" />
       <select name="ceremonies" defaultValue="">
         <option value="" disabled>
