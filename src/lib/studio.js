@@ -1,5 +1,5 @@
-function env(key, fallback = "") {
-  return (process.env[key] || fallback).trim();
+function env(value, fallback = "") {
+  return (value || fallback).trim();
 }
 
 function digits(value) {
@@ -7,15 +7,15 @@ function digits(value) {
 }
 
 export const studio = {
-  whatsapp: digits(env("NEXT_PUBLIC_WHATSAPP")),
-  telegram: env("NEXT_PUBLIC_TELEGRAM").replace(/^@/, ""),
-  email: env("NEXT_PUBLIC_EMAIL"),
-  phone: env("NEXT_PUBLIC_PHONE"),
-  siteUrl: env("NEXT_PUBLIC_SITE_URL", "https://artisanweddings.in"),
-  instagram: env("NEXT_PUBLIC_INSTAGRAM"),
-  youtube: env("NEXT_PUBLIC_YOUTUBE"),
-  facebook: env("NEXT_PUBLIC_FACEBOOK"),
-  pinterest: env("NEXT_PUBLIC_PINTEREST"),
+  whatsapp: digits(env(process.env.NEXT_PUBLIC_WHATSAPP)),
+  telegram: env(process.env.NEXT_PUBLIC_TELEGRAM).replace(/^@/, ""),
+  email: env(process.env.NEXT_PUBLIC_EMAIL),
+  phone: env(process.env.NEXT_PUBLIC_PHONE),
+  siteUrl: env(process.env.NEXT_PUBLIC_SITE_URL, "https://artisanweddings.in"),
+  instagram: env(process.env.NEXT_PUBLIC_INSTAGRAM),
+  youtube: env(process.env.NEXT_PUBLIC_YOUTUBE),
+  facebook: env(process.env.NEXT_PUBLIC_FACEBOOK),
+  pinterest: env(process.env.NEXT_PUBLIC_PINTEREST),
 };
 
 export function whatsappDisplay(number = studio.whatsapp) {
