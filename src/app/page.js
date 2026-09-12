@@ -5,8 +5,7 @@ import TestimonialSlider from "@/components/TestimonialSlider";
 import FilmPlayer from "@/components/FilmPlayer";
 import Reveal from "@/components/Reveal";
 
-const heroImg =
-  "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=80";
+const heroImg = "/videos/hero.mp4";
 const mehendiHands =
   "https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=1600&q=80";
 const filmBg =
@@ -22,9 +21,13 @@ export default function Home() {
   return (
     <>
       <section className="relative min-h-[100vh] overflow-hidden text-white">
-        <img
+        <video
           src={heroImg}
-          alt="Indian wedding couple"
+          autoPlay
+          muted
+          loop
+          playsInline
+          aria-label="Indian wedding couple"
           className="absolute inset-0 h-full w-full object-cover kenburns"
         />
         <div className="hero-overlay absolute inset-0" />
@@ -83,11 +86,16 @@ export default function Home() {
                 className="h-[340px] w-full object-cover transition duration-700 hover:scale-105"
               />
               <div className="absolute inset-0 flex items-center justify-center bg-black/25">
-                <Link href="/story" className="flex flex-col items-center gap-2 text-white">
+                <Link
+                  href="/story"
+                  className="flex flex-col items-center gap-2 text-white"
+                >
                   <span className="play-pulse flex h-14 w-14 items-center justify-center rounded-full border border-white/70 bg-white/15 backdrop-blur-sm text-xl">
                     ▶
                   </span>
-                  <span className="text-[11px] tracking-[0.25em]">PLAY OUR STORY</span>
+                  <span className="text-[11px] tracking-[0.25em]">
+                    PLAY OUR STORY
+                  </span>
                 </Link>
               </div>
             </div>
@@ -98,7 +106,9 @@ export default function Home() {
       <section className="bg-[#f4eee4] px-6 py-16 lg:px-10">
         <div className="mx-auto max-w-7xl">
           <Reveal className="mb-8 flex flex-col items-center justify-between gap-3 md:flex-row">
-            <h3 className="section-label text-[#6b5a42]">THE WEDDING JOURNEY</h3>
+            <h3 className="section-label text-[#6b5a42]">
+              THE WEDDING JOURNEY
+            </h3>
             <p className="script text-lg text-[#6b5a42]">
               Different rituals. A single beautiful story.
             </p>
@@ -111,16 +121,24 @@ export default function Home() {
                   className="card-hover group block overflow-hidden rounded-sm bg-white"
                 >
                   <div className="h-36 overflow-hidden">
-                    <img src={c.image} alt={c.title} className="h-full w-full object-cover" />
+                    <img
+                      src={c.image}
+                      alt={c.title}
+                      className="h-full w-full object-cover"
+                    />
                   </div>
                   <div className="flex items-end justify-between p-3">
                     <div>
                       <div className="text-[11px] font-medium tracking-[0.14em]">
                         {c.title.toUpperCase()}
                       </div>
-                      <div className="mt-1 text-[11px] text-[#6b5f52]">{c.tagline}</div>
+                      <div className="mt-1 text-[11px] text-[#6b5f52]">
+                        {c.tagline}
+                      </div>
                     </div>
-                    <span className="text-[#9a6b2f] transition group-hover:translate-x-1">→</span>
+                    <span className="text-[#9a6b2f] transition group-hover:translate-x-1">
+                      →
+                    </span>
                   </div>
                 </Link>
               </Reveal>
@@ -130,7 +148,11 @@ export default function Home() {
       </section>
 
       <section className="relative overflow-hidden px-6 py-20 text-white lg:px-10">
-        <img src={filmBg} alt="" className="absolute inset-0 h-full w-full object-cover" />
+        <img
+          src={filmBg}
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover"
+        />
         <div className="dark-film absolute inset-0" />
         <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-2">
           <Reveal>
@@ -141,8 +163,8 @@ export default function Home() {
               in motion.
             </h2>
             <p className="mt-4 max-w-md text-sm leading-7 text-[#eadccb]">
-              Cinematic wedding films that bring your story to life. Press play —
-              the film opens here, on this page.
+              Cinematic wedding films that bring your story to life. Press play
+              — the film opens here, on this page.
             </p>
             <Link href="/films" className="btn-pill mt-8">
               ▶ Watch Our Films
@@ -176,7 +198,11 @@ export default function Home() {
                   className="card-hover block overflow-hidden rounded-sm bg-white"
                 >
                   <div className="h-36 overflow-hidden">
-                    <img src={s.image} alt={s.names} className="h-full w-full object-cover" />
+                    <img
+                      src={s.image}
+                      alt={s.names}
+                      className="h-full w-full object-cover"
+                    />
                   </div>
                   <div className="p-3">
                     <div className="text-sm font-medium">{s.names}</div>
@@ -201,18 +227,33 @@ export default function Home() {
       </section>
 
       <section className="relative overflow-hidden px-6 py-24 text-white">
-        <img src={kindBg} alt="" className="absolute inset-0 h-full w-full object-cover" />
+        <img
+          src={kindBg}
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover"
+        />
         <div className="absolute inset-0 bg-[#1a1010]/78" />
         <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-8 md:grid-cols-[1fr_1.4fr_1fr]">
           <div className="hidden justify-center md:flex">
             <div className="polaroid float-slow w-44">
-              <img src={polaroid1} alt="" className="h-44 w-full object-cover" />
+              <img
+                src={polaroid1}
+                alt=""
+                className="h-44 w-full object-cover"
+              />
             </div>
           </div>
           <TestimonialSlider items={testimonials} />
           <div className="hidden justify-center md:flex">
-            <div className="polaroid r w-44" style={{ animation: "floaty 5s ease-in-out 0.6s infinite" }}>
-              <img src={polaroid2} alt="" className="h-44 w-full object-cover" />
+            <div
+              className="polaroid r w-44"
+              style={{ animation: "floaty 5s ease-in-out 0.6s infinite" }}
+            >
+              <img
+                src={polaroid2}
+                alt=""
+                className="h-44 w-full object-cover"
+              />
             </div>
           </div>
         </div>
