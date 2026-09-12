@@ -39,6 +39,7 @@ function buildMessage(data) {
 
 export default function EnquiryForm() {
   const [channel, setChannel] = useState("whatsapp");
+  const [date, setDate] = useState("");
   const [sent, setSent] = useState(false);
 
   function onSubmit(e) {
@@ -134,13 +135,25 @@ export default function EnquiryForm() {
       <input required name="name" placeholder="Your Name *" />
       <input required type="email" name="email" placeholder="Email Address *" />
       <input required name="phone" placeholder="Phone Number *" />
-      <input
-        required
-        type="date"
-        name="date"
-        aria-label="Wedding Date"
-        placeholder="Wedding Date"
-      />
+      <div className="relative">
+        {!date && (
+          <span className="pointer-events-none absolute inset-y-0 left-[0.85rem] flex items-center text-sm text-[#6b5f52]">
+            Wedding Date *
+          </span>
+        )}
+        <input
+          required
+          type="date"
+          name="date"
+          aria-label="Wedding Date"
+          value={date}
+          onChange={(e) => setDate(e.target.value)}
+          onClick={(e) => e.currentTarget.showPicker?.()}
+          onKeyDown={(e) => e.preventDefault()}
+          onPaste={(e) => e.preventDefault()}
+          className={date ? "" : "date-input-empty text-transparent"}
+        />
+      </div>
       <input name="venue" placeholder="City / Venue" />
       <select name="ceremonies" defaultValue="">
         <option value="" disabled>

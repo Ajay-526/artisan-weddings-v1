@@ -313,6 +313,10 @@ input:focus, textarea:focus, select:focus {
   border-color: var(--gold);
 }
 
+.date-input-empty::-webkit-datetime-edit {
+  color: transparent;
+}
+
 .polaroid {
   background: #fff;
   padding: 10px 10px 28px;
