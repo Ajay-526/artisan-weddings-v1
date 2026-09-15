@@ -6,19 +6,19 @@ import styles from "./OurWorkCarousel.module.css";
 
 const images = [
   {
-    src: "https://hdy4rqbgimemeptv.private.blob.vercel-storage.com/images/ANU_0076.jpg?vercel-blob-valid-until=1789496660561&vercel-blob-delegation=eyJzdG9yZUlkIjoic3RvcmVfaGR5NFJRQkdpTUVtRVB0diIsIm93bmVySWQiOiJ0ZWFtX1J6ZnU4TUdjQnBiOTBiZmx2M1ZFNm9RcyIsInBhdGhuYW1lIjoiKiIsIm9wZXJhdGlvbnMiOlsiZ2V0IiwiaGVhZCJdLCJ2YWxpZFVudGlsIjoxNzg5NTM5NjU1ODEzLCJpYXQiOjE3ODk0OTY0NTY4NzR9.p8nQxGgqAZFAKLpgCX_qgd44NnGf3foLqQJdJ53OuMk&vercel-blob-signature=klBRCgfMWQgawArDeVCeFVKM4Gn-mlYjnBUDQlbiqbs",
+    src: "/images/ANU_0076.jpg",
     couple: "Aarav & Priya",
     location: "Hyderabad",
     category: "Haldi",
   },
   {
-    src: "/images/https://hdy4rqbgimemeptv.private.blob.vercel-storage.com/images/ANU_1751.jpg?vercel-blob-valid-until=1789496687346&vercel-blob-delegation=eyJzdG9yZUlkIjoic3RvcmVfaGR5NFJRQkdpTUVtRVB0diIsIm93bmVySWQiOiJ0ZWFtX1J6ZnU4TUdjQnBiOTBiZmx2M1ZFNm9RcyIsInBhdGhuYW1lIjoiKiIsIm9wZXJhdGlvbnMiOlsiZ2V0IiwiaGVhZCJdLCJ2YWxpZFVudGlsIjoxNzg5NTM5NjU1ODEzLCJpYXQiOjE3ODk0OTY0NTY4NzR9.p8nQxGgqAZFAKLpgCX_qgd44NnGf3foLqQJdJ53OuMk&vercel-blob-signature=Pl_DMn9m1WEme3FAOhw4pPlXeENNBNrClATV5KTdmuE",
+    src: "/images/ANU_1751.jpg",
     couple: "Siddharth & Ananya",
     location: "Bangalore",
     category: "Wedding",
   },
   {
-    src: "/images/https://hdy4rqbgimemeptv.private.blob.vercel-storage.com/images/DSC_0576%20copy.jpg?vercel-blob-valid-until=1789496715344&vercel-blob-delegation=eyJzdG9yZUlkIjoic3RvcmVfaGR5NFJRQkdpTUVtRVB0diIsIm93bmVySWQiOiJ0ZWFtX1J6ZnU4TUdjQnBiOTBiZmx2M1ZFNm9RcyIsInBhdGhuYW1lIjoiKiIsIm9wZXJhdGlvbnMiOlsiZ2V0IiwiaGVhZCJdLCJ2YWxpZFVudGlsIjoxNzg5NTM5NjU1ODEzLCJpYXQiOjE3ODk0OTY0NTY4NzR9.p8nQxGgqAZFAKLpgCX_qgd44NnGf3foLqQJdJ53OuMk&vercel-blob-signature=15Ndwk0ycZWMmvX-WhoWZuNFtcOtsfEE7VOeovNABPs",
+    src: "/images/DSC_0576 copy.jpg",
     couple: "Rohit & Meera",
     location: "Goa",
     category: "Celebration",
@@ -36,7 +36,7 @@ const images = [
     category: "Reception",
   },
   {
-    src: "/images/https://hdy4rqbgimemeptv.private.blob.vercel-storage.com/images/DSC03140%20copy.jpg?vercel-blob-valid-until=1789496704084&vercel-blob-delegation=eyJzdG9yZUlkIjoic3RvcmVfaGR5NFJRQkdpTUVtRVB0diIsIm93bmVySWQiOiJ0ZWFtX1J6ZnU4TUdjQnBiOTBiZmx2M1ZFNm9RcyIsInBhdGhuYW1lIjoiKiIsIm9wZXJhdGlvbnMiOlsiZ2V0IiwiaGVhZCJdLCJ2YWxpZFVudGlsIjoxNzg5NTM5NjU1ODEzLCJpYXQiOjE3ODk0OTY0NTY4NzR9.p8nQxGgqAZFAKLpgCX_qgd44NnGf3foLqQJdJ53OuMk&vercel-blob-signature=bNvspe_70j7hchr479saFWkehHHQjJBGUrz1PFq66Ko",
+    src: "/images/DSC03140 copy.jpg",
     couple: "Vihaan & Tara",
     location: "Jaipur",
     category: "Ceremony",
