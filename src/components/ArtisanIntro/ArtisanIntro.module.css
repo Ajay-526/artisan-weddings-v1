@@ -1,0 +1,261 @@
+.section {
+  background: #f8f0e7;
+  color: #211916;
+
+  padding: 105px 7vw 110px;
+
+  text-align: center;
+}
+
+
+/* -------------------------
+   BRAND
+------------------------- */
+
+.top {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  display: block;
+
+  margin-bottom: 30px;
+
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+
+  letter-spacing: 0.32em;
+
+  color: #8b7062;
+}
+
+.top h2 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+
+  font-size: clamp(52px, 5.5vw, 74px);
+
+  line-height: 0.98;
+  font-weight: 400;
+
+  letter-spacing: -0.025em;
+}
+
+.top h2 i {
+  font-weight: 400;
+}
+
+
+/* -------------------------
+   QUALITIES
+------------------------- */
+
+.qualities {
+  max-width: 720px;
+
+  margin: 75px auto 0;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  border-top: 1px solid rgba(33, 25, 22, 0.25);
+  border-bottom: 1px solid rgba(33, 25, 22, 0.25);
+}
+
+.quality {
+  padding: 24px 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+}
+
+.quality + .quality {
+  border-left: 1px solid rgba(33, 25, 22, 0.18);
+}
+
+.quality span {
+  font-family: Arial, sans-serif;
+
+  font-size: 9px;
+
+  letter-spacing: 0.1em;
+
+  color: #9b8173;
+}
+
+.quality p {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+
+  font-size: 21px;
+
+  text-transform: capitalize;
+}
+
+
+/* -------------------------
+   DESCRIPTION
+------------------------- */
+
+.description {
+  max-width: 540px;
+
+  margin: 45px auto 0;
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+
+  font-size: 20px;
+
+  line-height: 1.45;
+
+  color: #68564d;
+}
+
+
+/* -------------------------
+   ACTIONS
+------------------------- */
+
+.actions {
+  margin-top: 45px;
+
+  display: flex;
+  justify-content: center;
+
+  gap: 14px;
+}
+
+.actions a {
+  min-width: 150px;
+
+  padding: 14px 22px;
+
+  border: 1px solid rgba(33, 25, 22, 0.4);
+
+  color: #211916;
+
+  text-decoration: none;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 10px;
+
+  letter-spacing: 0.13em;
+
+  transition: all 0.3s ease;
+}
+
+.actions a:hover {
+  background: #211916;
+  color: #f8f0e7;
+}
+
+.actions span {
+  margin-left: 8px;
+
+  font-size: 13px;
+}
+
+
+/* -------------------------
+   MOBILE
+------------------------- */
+
+@media (max-width: 650px) {
+
+  .section {
+    padding: 80px 24px 85px;
+  }
+
+  .top h2 {
+    font-size: 48px;
+  }
+
+  .qualities {
+    margin-top: 60px;
+  }
+
+  .quality {
+    flex-direction: column;
+    gap: 6px;
+    padding: 20px 5px;
+  }
+
+  .quality p {
+    font-size: 18px;
+  }
+
+  .description {
+    margin-top: 38px;
+    font-size: 19px;
+  }
+
+ /* -------------------------
+   ACTIONS
+------------------------- */
+
+.actions {
+  margin-top: 48px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 12px;
+}
+
+.actions a {
+  min-width: 145px;
+
+  padding: 13px 23px;
+
+  border: 1px solid #211916;
+  border-radius: 100px;
+
+  background: transparent;
+  color: #211916;
+
+  text-decoration: none;
+
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+
+  letter-spacing: 0.12em;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.actions a span {
+  font-size: 13px;
+
+  transition: transform 0.3s ease;
+}
+
+.actions a:hover {
+  background: #211916;
+  color: #f8f0e7;
+
+  transform: translateY(-2px);
+}
+
+.actions a:hover span {
+  transform: translate(2px, -2px);
+}
+}
