@@ -8,7 +8,7 @@ import ArtisanIntro from "@/components/ArtisanIntro/Artisanintro";
 import OurWorkCarousel from "@/components/OurWorkCarousel/OurWorkCarousel";
 
 const heroImg =
-  "https://hdy4rqbgimemeptv.private.blob.vercel-storage.com/Website%20reel.mp4?vercel-blob-valid-until=1789497254380&vercel-blob-delegation=eyJzdG9yZUlkIjoic3RvcmVfaGR5NFJRQkdpTUVtRVB0diIsIm93bmVySWQiOiJ0ZWFtX1J6ZnU4TUdjQnBiOTBiZmx2M1ZFNm9RcyIsInBhdGhuYW1lIjoiKiIsIm9wZXJhdGlvbnMiOlsiZ2V0IiwiaGVhZCJdLCJ2YWxpZFVudGlsIjoxNzg5NTM5NjU1ODEzLCJpYXQiOjE3ODk0OTY0NTY4NzR9.p8nQxGgqAZFAKLpgCX_qgd44NnGf3foLqQJdJ53OuMk&vercel-blob-signature=FQPCh1xKXJC9Egvq4WNVUt6F8wMINGGeNS5GZNXbZbI";
+  "https://hdy4rqbgimemeptv.private.blob.vercel-storage.com/Videos/Website%20reel.mp4?vercel-blob-delegation=eyJzdG9yZUlkIjoic3RvcmVfaGR5NFJRQkdpTUVtRVB0diIsIm93bmVySWQiOiJ0ZWFtX1J6ZnU4TUdjQnBiOTBiZmx2M1ZFNm9RcyIsInBhdGhuYW1lIjoiKiIsIm9wZXJhdGlvbnMiOlsiZ2V0IiwiaGVhZCJdLCJ2YWxpZFVudGlsIjoxNzg5NTQwNjM2ODg4LCJpYXQiOjE3ODk0OTc0Mzc1Nzh9.XuKhH-EkLOTxQ0v4ZlYihPWFbzHezrUdgUx4CkpWdE4&vercel-blob-signature=5zegC7Q3I_B_VIafWFMSqzrNkV9igThemvyk4VQrups";
 const mehendiHands =
   "https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=1600&q=80";
 const filmBg =
