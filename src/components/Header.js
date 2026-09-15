@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 const links = [
   { href: "/", label: "Home" },
   { href: "/story", label: "Our Story" },
+  { href: "/photos", label: "Photos" },
   { href: "/ceremonies", label: "Ceremonies" },
   { href: "/films", label: "Films" },
   { href: "/love-stories", label: "Love Stories" },
@@ -16,7 +17,7 @@ const links = [
 ];
 
 const leftLinks = links.slice(0, 4);
-const rightLinks = links.slice(3);
+const rightLinks = links.slice(4);
 
 export default function Header() {
   const pathname = usePathname();
@@ -35,12 +36,12 @@ export default function Header() {
 
   return (
     <header
-      className={`inset-x-0 top-0 z-50 border-b border-[#d4b483]/20 bg-[#1c1410]/95 backdrop-blur-md transition-all duration-500 ${
+      className={`lg:relative fixed inset-x-0 top-0 z-50 border-b border-[#d4b483]/20 bg-[#1c1410]/95 backdrop-blur-md transition-all duration-500 ${
         solid ? "shadow-lg" : "shadow-md"
       }`}
     >
-      <div className="relative mx-auto flex max-w-7xl items-center justify-between gap-10 px-5 py-2 lg:grid lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] lg:px-8">
-        <nav className="hidden w-full items-center justify-end gap-10 lg:flex">
+      <div className="relative mx-auto flex min-h-16 max-w-7xl items-center justify-between gap-4 px-5 py-2 lg:grid lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] lg:px-8">
+        <nav className="hidden w-full items-center justify-end gap-6 lg:flex">
           {leftLinks.map((l) => (
             <Link
               key={l.href}
@@ -54,14 +55,14 @@ export default function Header() {
 
         <Link
           href="/"
-          className="flex items-center gap-3 lg:justify-self-center"
+          className="absolute left-1/2 flex -translate-x-1/2 items-center gap-3 lg:static lg:translate-x-0 lg:justify-self-center"
         >
-          <Image
+          <img
             src="/Artisan Weddings.png"
             alt="Artisan Weddings"
-            width={80}
-            height={80}
-            // className="h-10 w-10 rounded-full object-cover ring-1 ring-[#d4b483]/50"
+            width={100}
+            height={100}
+            className="h-14 w-auto object-contain lg:h-15 px-10"
           />
           {/* <div className="leading-tight">
             <div className="font-serif text-[13px] tracking-[0.18em] text-[#f6efe4]">
@@ -73,8 +74,8 @@ export default function Header() {
           </div> */}
         </Link>
 
-        <div className="flex items-center gap-10 lg:static lg:w-full lg:justify-start">
-          <nav className="hidden items-center justify-start gap-10 lg:flex">
+        <div className="flex items-center gap-4 lg:static lg:w-full lg:justify-start">
+          <nav className="hidden items-center justify-start gap-6 lg:flex">
             {rightLinks.map((l) => (
               <Link
                 key={l.href}
@@ -86,19 +87,15 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* <Link
-            href="/contact"
-            className="hidden rounded-full border border-[#e8d7b8]/50 px-4 py-1.5 text-xs tracking-wide text-[#f6efe4] transition hover:bg-white/10 md:inline-flex"
-          >
-            Enquire Now
-          </Link>
           <button
-            className="lg:hidden text-[#f6efe4] text-2xl px-1"
+            type="button"
+            className="px-1 text-2xl leading-none text-[#f6efe4] lg:hidden"
             onClick={() => setOpen((v) => !v)}
-            aria-label="Menu"
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
           >
             {open ? "×" : "☰"}
-          </button> */}
+          </button>
         </div>
       </div>
 

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./OurWorkCarousel.module.css";
 
 const images = [
@@ -45,6 +45,13 @@ const images = [
 
 export default function OurWorkCarousel() {
   const [active, setActive] = useState(0);
+
+  useEffect(() => {
+    images.forEach(({ src }) => {
+      const image = new window.Image();
+      image.src = src;
+    });
+  }, []);
 
   const next = () => {
     setActive((current) => (current + 1) % images.length);

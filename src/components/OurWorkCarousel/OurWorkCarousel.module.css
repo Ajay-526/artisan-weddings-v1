@@ -132,7 +132,7 @@
 .image {
   object-fit: cover;
 
-  animation: imageReveal 0.55s ease;
+  animation: imageReveal 0.2s ease;
 }
 
 @keyframes imageReveal {
