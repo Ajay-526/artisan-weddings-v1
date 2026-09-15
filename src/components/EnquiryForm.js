@@ -1,6 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faTelegram,
+  faWhatsapp,
+} from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { studio } from "@/lib/studio";
 
 const channels = [
@@ -9,18 +15,21 @@ const channels = [
     label: "WhatsApp",
     hint: "Opens a chat with your details",
     color: "#25D366",
+    icon: faWhatsapp,
   },
   {
     id: "telegram",
     label: "Telegram",
     hint: "Sends a message in Telegram",
     color: "#2AABEE",
+    icon: faTelegram,
   },
   {
     id: "email",
     label: "Email",
     hint: "Opens your mail app",
     color: "#6b2430",
+    icon: faEnvelope,
   },
 ];
 
@@ -121,7 +130,7 @@ export default function EnquiryForm() {
                 className="mx-auto mb-2 flex h-9 w-9 items-center justify-center rounded-full text-xs font-medium text-white"
                 style={{ background: c.color }}
               >
-                {c.label[0]}
+                <FontAwesomeIcon icon={c.icon} aria-hidden="true" />
               </span>
               <span className="block text-sm">{c.label}</span>
               <span className="mt-1 hidden text-[10px] text-[#6b5f52] sm:block">
