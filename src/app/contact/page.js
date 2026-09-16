@@ -12,7 +12,7 @@ export default function ContactPage() {
   const phoneLabel = whatsappDisplay() || studio.phone;
 
   return (
-    <div className="pt-24">
+    <div className="lg:pt-0 pt-15">
       <div className="mx-auto grid max-w-5xl gap-12 px-6 py-16 md:grid-cols-2">
         <div>
           <p className="section-label">ENQUIRE</p>

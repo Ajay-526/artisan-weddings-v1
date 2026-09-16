@@ -151,7 +151,7 @@ export const metadata = {
 
 export default function PhotosPage() {
   return (
-    <main className="bg-[#f7f1e8] xs:pt-10 lg:pt-[none] text-[#211916]">
+    <main className="bg-[#f7f1e8] lg:pt-0 pt-20 text-[#211916]">
       <header className="mx-auto max-w-4xl px-6 py-20 text-center lg:py-28">
         <p className="section-label">THE ART OF NOTICING</p>
         <h1 className="mt-4 font-serif text-5xl leading-[0.95] md:text-7xl">

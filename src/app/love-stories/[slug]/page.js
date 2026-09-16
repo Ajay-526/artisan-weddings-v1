@@ -28,7 +28,7 @@ export default async function LoveStoryPage({ params }) {
   if (!s) notFound();
 
   return (
-    <article className="pt-24">
+    <article className="lg:pt-0 pt-15">
       <header className="relative h-[58vh] overflow-hidden">
         <img
           src={s.image}

@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function StoryPage() {
   return (
-    <article className="pt-24">
+    <article className="lg:pt-10 pt-22">
       <header className="relative h-[46vh] overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=80"

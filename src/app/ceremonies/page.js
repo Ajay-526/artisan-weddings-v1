@@ -11,7 +11,7 @@ export const metadata = {
 
 export default function CeremoniesPage() {
   return (
-    <div className="pt-24">
+    <div className="lg:pt-0 pt-15">
       <div className="mx-auto max-w-6xl px-6 py-16">
         <p className="section-label">THE WEDDING JOURNEY</p>
         <h1 className="mt-3 font-serif text-4xl md:text-5xl">
