@@ -1,0 +1,21 @@
+{
+  "name": "Artisan Weddings",
+  "short_name": "Artisan Weddings",
+  "description": "Stories for a lifetime.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#faf6ef",
+  "theme_color": "#1c1410",
+  "icons": [
+    {
+      "src": "/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
