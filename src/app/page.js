@@ -135,34 +135,80 @@ export default function Home() {
         </section> */}
         <OurWorkCarousel />
 
-        <section className="h-screen relative overflow-hidden flex text-white">
-          <img
-            src={kindBg}
-            alt=""
-            className="absolute inset-0 h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-[#1a1010]/78" />
-          <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-8 md:grid-cols-[1fr_1.4fr_1fr]">
-            <div className="hidden justify-center md:flex">
-              <div className="polaroid float-slow w-44">
-                <img
-                  src={polaroid1}
-                  alt=""
-                  className="h-44 w-full object-cover"
-                />
+        <section className="testimonial-section relative isolate overflow-hidden bg-[#f7f4ee] px-5 py-20 sm:py-24 lg:min-h-screen lg:px-10 lg:py-20">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_43%,rgba(255,255,255,0.98),rgba(247,244,238,0.72)_44%,rgba(229,222,210,0.48))]" />
+          <p className="pointer-events-none absolute -bottom-8 left-1/2 hidden -translate-x-1/2 whitespace-nowrap font-serif text-[10rem] leading-none tracking-[0.13em] text-[#e5ddd1]/65 lg:block">
+            TESTIMONIALS
+          </p>
+
+          <div className="relative z-10 mx-auto max-w-7xl">
+            <div className="text-center">
+              <p className="section-label text-[#8f5d26]">KIND WORDS</p>
+              <h2 className="mt-4 font-serif text-4xl leading-tight text-[#25201e] sm:text-5xl lg:text-[4rem]">
+                Stories from our couples
+              </h2>
+              <p className="mt-3 text-base text-[#706b69] sm:text-lg">
+                Real moments. Real people. Unforgettable stories.
+              </p>
+              <div
+                className="mt-6 flex items-center justify-center gap-3 text-[#aa722f]"
+                aria-hidden="true"
+              >
+                <span className="h-px w-16 bg-[#b88342]" />
+                <span className="text-2xl leading-none">♡</span>
+                <span className="h-px w-16 bg-[#b88342]" />
               </div>
             </div>
-            <TestimonialSlider items={testimonials} />
-            <div className="hidden justify-center md:flex">
-              <div
-                className="polaroid r w-44"
-                style={{ animation: "floaty 5s ease-in-out 0.6s infinite" }}
-              >
-                <img
-                  src={polaroid2}
-                  alt=""
-                  className="h-44 w-full object-cover"
-                />
+
+            <div className="relative mx-auto mt-8 grid max-w-6xl items-center lg:mt-7 lg:grid-cols-[1fr_minmax(0,1.65fr)_1fr] lg:gap-10">
+              <div className="pointer-events-none absolute -left-24 top-1/4 hidden rotate-[-16deg] font-display text-4xl italic leading-none text-[#b9a58a]/80 lg:block">
+                More
+                <br />
+                than just
+                <br />
+                photos
+              </div>
+              <div className="pointer-events-none absolute -right-20 top-1/4 hidden rotate-[12deg] font-display text-4xl italic leading-none text-[#b9a58a]/80 lg:block">
+                Real
+                <br />
+                Stories
+                <br />♡
+              </div>
+
+              <div className="hidden lg:block">
+                <div className="polaroid float-slow relative z-10 ml-auto w-48 -rotate-[8deg] bg-white p-3 pb-7 shadow-[0_18px_30px_rgba(60,45,29,0.20)]">
+                  <img
+                    src="/photos/7.webp"
+                    alt="Newlyweds sharing a moment"
+                    className="h-56 w-full object-cover"
+                  />
+                </div>
+                <div className="polaroid relative -mt-12 ml-0 w-32 rotate-[7deg] bg-white p-2 pb-5 shadow-[0_14px_28px_rgba(60,45,29,0.18)]">
+                  <img
+                    src="/photos/10.webp"
+                    alt="Wedding detail"
+                    className="h-32 w-full object-cover grayscale"
+                  />
+                </div>
+              </div>
+
+              <TestimonialSlider items={testimonials} />
+
+              <div className="hidden lg:block">
+                <div className="polaroid r float-slow relative z-10 mr-auto w-48 rotate-[8deg] bg-white p-3 pb-7 shadow-[0_18px_30px_rgba(60,45,29,0.20)]">
+                  <img
+                    src="/photos/13.webp"
+                    alt="Wedding venue at sunset"
+                    className="h-56 w-full object-cover"
+                  />
+                </div>
+                <div className="polaroid r relative -mt-16 ml-28 w-32 -rotate-[6deg] bg-white p-2 pb-5 shadow-[0_14px_28px_rgba(60,45,29,0.18)]">
+                  <img
+                    src="/photos/15.webp"
+                    alt="Wedding flowers"
+                    className="h-32 w-full object-cover"
+                  />
+                </div>
               </div>
             </div>
           </div>
