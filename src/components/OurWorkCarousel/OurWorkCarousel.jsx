@@ -54,7 +54,7 @@ export default function OurWorkCarousel() {
 
       {/* Header */}
       <div className={styles.header}>
-        <p className={styles.eyebrow}>OUR WORK</p>
+        <h4 className={styles.eyebrow}>OUR WORK</h4>
 
         <h2>
           Moments worth
