@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ceremonies } from "@/lib/data";
 
@@ -20,17 +21,21 @@ export default function CeremoniesPage() {
           Different colours. One continuous story.
         </p>
         <div className="mt-12 grid gap-8 md:grid-cols-2">
-          {ceremonies.map((c) => (
+          {ceremonies.map((c, index) => (
             <Link
               key={c.slug}
               href={`/ceremonies/${c.slug}`}
               className="card-hover group overflow-hidden rounded-sm bg-white"
             >
-              <div className="h-64 overflow-hidden">
-                <img
+              <div className="relative h-64 overflow-hidden">
+                <Image
                   src={c.image}
                   alt={c.title}
-                  className="h-full w-full object-cover"
+                  fill
+                  priority={index < 2}
+                  quality={82}
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="object-cover"
                 />
               </div>
               <div className="p-6">

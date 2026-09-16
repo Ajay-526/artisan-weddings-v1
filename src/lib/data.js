@@ -8,8 +8,7 @@ export const ceremonies = [
     quote: "Two families meet. Two hearts already know.",
     description:
       "Roka is the quiet yes before the world is told. We photograph the first exchange of blessings, the shy glances, the weight of rings still new on the finger.",
-    image:
-      "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=1600&q=80",
+    image: "/ceremonies/roka.webp",
     gallery: [
       "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=1200&q=80",
       "https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1200&q=80",
@@ -33,8 +32,7 @@ export const ceremonies = [
     quote: "Joy looks best when it stains your skin gold.",
     description:
       "Turmeric, water, cousins, chaos. Haldi is colour in motion — we stay close enough to catch the splash, far enough to honour the ritual.",
-    image:
-      "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1600&q=80",
+    image: "/ceremonies/haldi.webp",
     gallery: [
       "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=80",
       "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=1200&q=80",
@@ -58,8 +56,7 @@ export const ceremonies = [
     quote: "Every vine on her hand is a secret she is about to keep.",
     description:
       "Hours of patience, songs in the courtyard, hidden initials in the design. Mehendi is slow art — we photograph the waiting as much as the finished pattern.",
-    image:
-      "https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=1600&q=80",
+    image: "/ceremonies/mehendi.webp",
     gallery: [
       "https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=1200&q=80",
       "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=1200&q=80",
@@ -83,8 +80,7 @@ export const ceremonies = [
     quote: "The night the family remembers how to dance like children.",
     description:
       "Stage lights, mismatched choreography, uncles who steal the show. Sangeet is cinema without a script — we film the pulse of the room.",
-    image:
-      "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=80",
+    image: "/images/DSC_1344 copy.webp",
     gallery: [
       "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80",
       "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=1200&q=80",
@@ -108,8 +104,7 @@ export const ceremonies = [
     quote: "Seven steps. One breath held by two hundred people.",
     description:
       "The pheras, the vows, the moment the veil lifts. We work like guests who happen to see everything — never louder than the sacred fire.",
-    image:
-      "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1600&q=80",
+    image: "/ceremonies/wedding.webp",
     gallery: [
       "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80",
       "https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1200&q=80",
@@ -133,8 +128,7 @@ export const ceremonies = [
     quote: "The first evening of a very long party.",
     description:
       "Entrance, first dance, late-night portraits when the lights go warm. Reception is where formality loosens and the real smiles arrive.",
-    image:
-      "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=1600&q=80",
+    image: "/ceremonies/reception.webp",
     gallery: [
       "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=1200&q=80",
       "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80",
@@ -323,6 +317,13 @@ export const films = [
     image:
       "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1600&q=80",
     youtubeId: "s6zR2T9vn2c",
+  },
+  {
+    title: "The Palace Evening",
+    couple: "Karan & Nisha | Udaipur",
+    image:
+      "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=1600&q=80",
+    youtubeId: "C0DPdy98e4c",
   },
   {
     title: "The Palace Evening",
