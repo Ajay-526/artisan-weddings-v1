@@ -2,10 +2,9 @@
 
 import Image from "next/image";
 import { useRef } from "react";
-import { Autoplay, Pagination } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "swiper/css/pagination";
 import styles from "./OurWorkCarousel.module.css";
 
 const images = [
@@ -77,7 +76,7 @@ export default function OurWorkCarousel() {
 
       <div className={styles.carousel}>
         <Swiper
-          modules={[Autoplay, Pagination]}
+          modules={[Autoplay]}
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
           }}
@@ -86,7 +85,6 @@ export default function OurWorkCarousel() {
           spaceBetween={16}
           loop
           autoplay={{ delay: 4000, disableOnInteraction: false }}
-          pagination={{ clickable: true }}
           breakpoints={{
             640: { slidesPerView: 1.45, spaceBetween: 20 },
             1024: { slidesPerView: 2.15, spaceBetween: 24 },
