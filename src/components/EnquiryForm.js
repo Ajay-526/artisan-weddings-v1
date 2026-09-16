@@ -2,10 +2,7 @@
 
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faTelegram,
-  faWhatsapp,
-} from "@fortawesome/free-brands-svg-icons";
+import { faInstagram, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { studio } from "@/lib/studio";
 
@@ -18,11 +15,11 @@ const channels = [
     icon: faWhatsapp,
   },
   {
-    id: "telegram",
-    label: "Telegram",
-    hint: "Sends a message in Telegram",
-    color: "#2AABEE",
-    icon: faTelegram,
+    id: "instagram",
+    label: "Instagram",
+    hint: "Opens Instagram to message us",
+    color: "#c13584",
+    icon: faInstagram,
   },
   {
     id: "email",
@@ -42,6 +39,7 @@ function buildMessage(data) {
     `Wedding date: ${data.date}`,
     `City / venue: ${data.venue || "-"}`,
     `Ceremonies: ${data.ceremonies || "-"}`,
+    `Budget: ${data.budget || "-"}`,
     `Note: ${data.note || "-"}`,
   ].join("\n");
 }
@@ -51,7 +49,7 @@ export default function EnquiryForm() {
   const [date, setDate] = useState("");
   const [sent, setSent] = useState(false);
 
-  function onSubmit(e) {
+  async function onSubmit(e) {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const data = Object.fromEntries(form.entries());
@@ -63,12 +61,9 @@ export default function EnquiryForm() {
         "_blank",
         "noopener,noreferrer",
       );
-    } else if (channel === "telegram") {
-      window.open(
-        `https://t.me/${studio.telegram}?text=${encodeURIComponent(text)}`,
-        "_blank",
-        "noopener,noreferrer",
-      );
+    } else if (channel === "instagram") {
+      await navigator.clipboard?.writeText(text);
+      window.open(studio.instagram, "_blank", "noopener,noreferrer");
     } else {
       const subject = encodeURIComponent(`Wedding enquiry — ${data.name}`);
       window.location.href = `mailto:${studio.email}?subject=${subject}&body=${encodeURIComponent(text)}`;
@@ -91,8 +86,12 @@ export default function EnquiryForm() {
         <p className="font-serif text-2xl">On its way.</p>
         <p className="mt-3 text-sm text-[#4a4038]">
           Your enquiry opened in{" "}
-          {channel === "email" ? "your mail app" : channel}. If nothing
-          appeared, allow pop-ups and try again.
+          {channel === "email"
+            ? "your mail app"
+            : channel === "instagram"
+              ? "Instagram with your enquiry copied to the clipboard"
+              : channel}
+          . If nothing appeared, allow pop-ups and try again.
         </p>
         <button
           type="button"
@@ -108,8 +107,8 @@ export default function EnquiryForm() {
   const actionLabel =
     channel === "whatsapp"
       ? "Send on WhatsApp"
-      : channel === "telegram"
-        ? "Send on Telegram"
+      : channel === "instagram"
+        ? "Message on Instagram"
         : "Send by Email";
 
   return (
@@ -172,6 +171,14 @@ export default function EnquiryForm() {
         <option>Wedding day only</option>
         <option>Pre-wedding + wedding</option>
         <option>Destination wedding</option>
+      </select>
+      <select required name="budget" defaultValue="">
+        <option value="" disabled>
+          Select your budget *
+        </option>
+        <option>3L to 4L</option>
+        <option>4L to 5L</option>
+        <option>5L +</option>
       </select>
       <textarea
         name="note"

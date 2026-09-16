@@ -32,6 +32,11 @@ export default function ArtisanIntro() {
         between.
       </p>
 
+      <p className={styles.description}>
+        Cinematic wedding films that bring your story to life. Press play the
+        film opens here, on this page.
+      </p>
+
       <div className={styles.actions}>
         <Link href="/story">View Photos</Link>
 

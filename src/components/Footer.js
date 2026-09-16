@@ -58,9 +58,9 @@ export default function Footer() {
                 rel="noreferrer"
                 aria-label={link.label}
                 title={link.label}
-                className="transition hover:text-[#f3e9dc]"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-[#d4b483]/60 bg-[#d4b483]/15 transition hover:border-[#f3e9dc] hover:bg-[#d4b483]/30"
               >
-                <FontAwesomeIcon icon={link.icon} className="h-4 w-4" />
+                <FontAwesomeIcon icon={link.icon} className="h-5 w-5" />
               </a>
             ))}
           </nav>

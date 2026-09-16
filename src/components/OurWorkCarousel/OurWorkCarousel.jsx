@@ -53,6 +53,14 @@ export default function OurWorkCarousel() {
     });
   }, []);
 
+  useEffect(() => {
+    const autoplay = window.setInterval(() => {
+      setActive((current) => (current + 1) % images.length);
+    }, 4000);
+
+    return () => window.clearInterval(autoplay);
+  }, []);
+
   const next = () => {
     setActive((current) => (current + 1) % images.length);
   };
@@ -83,10 +91,12 @@ export default function OurWorkCarousel() {
         <p className={styles.intro}>
           Every wedding has its own story, its own energy, and its own little moments that make it unforgettable. From the quiet glances to the loud celebrations, we love being there to capture it all as it naturally unfolds. Here are a few stories and moments that have stayed with us.
         </p>
+        <div className="mt-6.25">
+
          <a href="/love-stories" className={styles.explore}>
           Explore Love Stories
-          <span>↗</span>
         </a>
+        </div>
       </div>
 
 

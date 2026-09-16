@@ -67,36 +67,25 @@ export default function Home() {
       <div className="relative z-10">
         <ArtisanIntro />
 
-        <section className="relative overflow-hidden px-6 py-20 text-white lg:px-10">
+        <section className="relative min-h-screen overflow-hidden px-6 py-20 text-white lg:px-10">
           <img
             src={filmBg}
             alt=""
             className="absolute inset-0 h-full w-full object-cover"
           />
           <div className="dark-film absolute inset-0" />
-          <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-2">
-            <Reveal>
+          <div className="relative z-10 mx-auto flex max-w-6xl flex-col items-center gap-10 text-center">
+            {/* <Reveal className="flex flex-col items-center">
               <p className="section-label text-[#e8d4b0]">WEDDING FILMS</p>
               <h2 className="mt-3 font-serif text-4xl md:text-5xl">
                 Relive the emotions
                 <br />
                 in motion.
               </h2>
-              <p className="mt-4 max-w-md text-sm leading-7 text-[#eadccb]">
-                Cinematic wedding films that bring your story to life. Press
-                play — the film opens here, on this page.
-              </p>
-              <Link href="/films" className="btn-pill mt-8">
-                ▶ Watch Our Films
-              </Link>
-            </Reveal>
-            <Reveal delay={140}>
-              <div className="overflow-hidden rounded-sm border border-white/10 bg-black/40 shadow-2xl">
-                <div className="flex items-center justify-between px-3 py-2 text-[11px] text-[#ddd]">
-                  <span>{films[0].couple}</span>
-                  <span>Watch in site</span>
-                </div>
-                <FilmPlayer film={films[0]} compact />
+            </Reveal> */}
+            <Reveal delay={140} className=" w-full sm:-mt-6">
+              <div className="mx-auto w-full max-w-5xl overflow-hidden rounded-sm border border-white/10 bg-black/40 shadow-2xl">
+                <FilmPlayer film={films[0]} />
               </div>
             </Reveal>
           </div>
@@ -147,7 +136,7 @@ export default function Home() {
         </section> */}
         <OurWorkCarousel />
 
-        <section className="relative overflow-hidden px-6 py-24 text-white">
+        <section className="h-screen relative overflow-hidden flex text-white">
           <img
             src={kindBg}
             alt=""
