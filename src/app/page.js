@@ -7,8 +7,7 @@ import Reveal from "@/components/Reveal";
 import ArtisanIntro from "@/components/ArtisanIntro/Artisanintro";
 import OurWorkCarousel from "@/components/OurWorkCarousel/OurWorkCarousel";
 
-const heroImg =
-  "https://pxaulx4cif1wet0u.public.blob.vercel-storage.com/videos/Website%20reel.mp4";
+const heroImg = "videos/Website reel.mp4";
 const mehendiHands =
   "https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=1600&q=80";
 const filmBg =
