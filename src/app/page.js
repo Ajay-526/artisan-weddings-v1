@@ -67,7 +67,7 @@ export default function Home() {
       <div className="relative z-10">
         <ArtisanIntro />
 
-        <section className="relative min-h-screen overflow-hidden px-6 py-20 text-white lg:px-10">
+        <section className="relative lg:min-h-screen overflow-hidden px-6 py-20 text-white lg:px-10">
           <img
             src={filmBg}
             alt=""
