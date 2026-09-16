@@ -80,9 +80,9 @@ export default function OurWorkCarousel() {
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
           }}
-          slidesPerView={1.08}
+          slidesPerView={1}
           centeredSlides
-          spaceBetween={16}
+          spaceBetween={0}
           loop
           autoplay={{ delay: 4000, disableOnInteraction: false }}
           breakpoints={{
