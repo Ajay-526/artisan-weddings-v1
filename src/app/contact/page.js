@@ -4,7 +4,7 @@ import { studio, whatsappDisplay } from "@/lib/studio";
 export const metadata = {
   title: "Enquire",
   description:
-    "Book Artisan Weddings for your Indian wedding. Send an enquiry by WhatsApp, Telegram or email.",
+    "Book Artisan Weddings for your Indian wedding. Send an enquiry by WhatsApp, Instagram or email.",
   alternates: { canonical: "/contact" },
 };
 
@@ -20,7 +20,7 @@ export default function ContactPage() {
             Let’s tell your story together.
           </h1>
           <p className="mt-4 text-sm leading-7 text-[#4a4038]">
-            Choose WhatsApp, Telegram or Email, then fill the form. Your note
+            Choose WhatsApp, Instagram or Email, then fill the form. Your note
             opens on the channel you picked — we reply personally.
           </p>
           <p className="mt-6 space-y-1 text-sm">
@@ -29,9 +29,6 @@ export default function ContactPage() {
             ) : null}
             {phoneLabel ? (
               <span className="block">WhatsApp: {phoneLabel}</span>
-            ) : null}
-            {studio.telegram ? (
-              <span className="block">Telegram: @{studio.telegram}</span>
             ) : null}
           </p>
         </div>

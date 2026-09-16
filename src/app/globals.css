@@ -233,6 +233,15 @@ h1, h2, h3, .font-serif {
 
 .nav-link:hover { opacity: 1; }
 
+.nav-link-active {
+  color: var(--gold-light);
+  opacity: 1;
+}
+
+.nav-link-active::after {
+  width: 100%;
+}
+
 .nav-link::after {
   content: "";
   position: absolute;

@@ -33,6 +33,8 @@ export default function Header() {
   }, []);
 
   const solid = !isHome || scrolled || open;
+  const isActive = (href) =>
+    pathname === href || (href !== "/" && pathname.startsWith(`${href}/`));
 
   return (
     <header
@@ -46,7 +48,8 @@ export default function Header() {
             <Link
               key={l.href}
               href={l.href}
-              className={`nav-link ${pathname === l.href ? "opacity-100" : ""}`}
+              aria-current={isActive(l.href) ? "page" : undefined}
+              className={`nav-link ${isActive(l.href) ? "nav-link-active" : ""}`}
             >
               {l.label}
             </Link>
@@ -80,7 +83,8 @@ export default function Header() {
               <Link
                 key={l.href}
                 href={l.href}
-                className={`nav-link ${pathname === l.href ? "opacity-100" : ""}`}
+                aria-current={isActive(l.href) ? "page" : undefined}
+                className={`nav-link ${isActive(l.href) ? "nav-link-active" : ""}`}
               >
                 {l.label}
               </Link>
@@ -107,7 +111,12 @@ export default function Header() {
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="py-1 text-base text-[#f6efe4]"
+                aria-current={isActive(l.href) ? "page" : undefined}
+                className={`border-l-2 py-1 pl-3 text-base transition ${
+                  isActive(l.href)
+                    ? "border-[#d4b483] text-[#d4b483]"
+                    : "border-transparent text-[#f6efe4]"
+                }`}
               >
                 {l.label}
               </Link>

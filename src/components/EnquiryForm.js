@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
@@ -30,6 +31,19 @@ const channels = [
   },
 ];
 
+const locations = {
+  Telangana: ["Hyderabad", "Warangal", "Nizamabad", "Other city"],
+  "Andhra Pradesh": ["Vijayawada", "Visakhapatnam", "Tirupati", "Other city"],
+  Karnataka: ["Bengaluru", "Mysuru", "Mangaluru", "Other city"],
+  "Tamil Nadu": ["Chennai", "Coimbatore", "Madurai", "Other city"],
+  Maharashtra: ["Mumbai", "Pune", "Nagpur", "Other city"],
+  Delhi: ["New Delhi", "Other city"],
+  Kerala: ["Kochi", "Thiruvananthapuram", "Other city"],
+  Rajasthan: ["Jaipur", "Udaipur", "Jodhpur", "Other city"],
+  Goa: ["Panaji", "Other city"],
+  Other: ["Other city"],
+};
+
 function buildMessage(data) {
   return [
     "Artisan Weddings enquiry",
@@ -37,7 +51,8 @@ function buildMessage(data) {
     `Phone: ${data.phone}`,
     `Email: ${data.email}`,
     `Wedding date: ${data.date}`,
-    `City / venue: ${data.venue || "-"}`,
+    `State: ${data.state}`,
+    `City: ${data.city}`,
     `Ceremonies: ${data.ceremonies || "-"}`,
     `Budget: ${data.budget || "-"}`,
     `Note: ${data.note || "-"}`,
@@ -45,15 +60,18 @@ function buildMessage(data) {
 }
 
 export default function EnquiryForm() {
+  const router = useRouter();
   const [channel, setChannel] = useState("whatsapp");
   const [date, setDate] = useState("");
-  const [sent, setSent] = useState(false);
+  const [state, setState] = useState("");
 
   async function onSubmit(e) {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const data = Object.fromEntries(form.entries());
     const text = buildMessage(data);
+    const qualified =
+      data.state === "Telangana" || data.state === "Andhra Pradesh";
 
     if (channel === "whatsapp") {
       window.open(
@@ -70,38 +88,27 @@ export default function EnquiryForm() {
     }
     if (typeof window !== "undefined") {
       if (window.fbq) window.fbq("track", "Lead", { content_name: channel });
+      if (window.fbq) {
+        window.fbq(
+          "trackCustom",
+          qualified ? "QualifiedEnquiry" : "OutOfAreaEnquiry",
+          {
+            state: data.state,
+            city: data.city,
+          },
+        );
+      }
       if (window.dataLayer) {
         window.dataLayer.push({
           event: "enquiry_submit",
           enquiry_channel: channel,
+          enquiry_state: data.state,
+          enquiry_city: data.city,
+          enquiry_qualified: qualified,
         });
       }
     }
-    setSent(true);
-  }
-
-  if (sent) {
-    return (
-      <div className="rounded-sm border border-[#e3d8c8] bg-white p-8 text-center">
-        <p className="font-serif text-2xl">On its way.</p>
-        <p className="mt-3 text-sm text-[#4a4038]">
-          Your enquiry opened in{" "}
-          {channel === "email"
-            ? "your mail app"
-            : channel === "instagram"
-              ? "Instagram with your enquiry copied to the clipboard"
-              : channel}
-          . If nothing appeared, allow pop-ups and try again.
-        </p>
-        <button
-          type="button"
-          className="btn-wine mt-6"
-          onClick={() => setSent(false)}
-        >
-          Send another
-        </button>
-      </div>
-    );
+    router.push(qualified ? "/contact/success" : "/contact/sorry");
   }
 
   const actionLabel =
@@ -162,7 +169,27 @@ export default function EnquiryForm() {
           className={date ? "" : "date-input-empty text-transparent"}
         />
       </div>
-      <input name="venue" placeholder="City / Venue" />
+      <select
+        required
+        name="state"
+        value={state}
+        onChange={(event) => setState(event.target.value)}
+      >
+        <option value="" disabled>
+          Select your state *
+        </option>
+        {Object.keys(locations).map((stateName) => (
+          <option key={stateName}>{stateName}</option>
+        ))}
+      </select>
+      <select required name="city" defaultValue="" disabled={!state}>
+        <option value="" disabled>
+          {state ? "Select your city *" : "Select state first"}
+        </option>
+        {(locations[state] || []).map((city) => (
+          <option key={city}>{city}</option>
+        ))}
+      </select>
       <select name="ceremonies" defaultValue="">
         <option value="" disabled>
           Which ceremonies are you planning?
