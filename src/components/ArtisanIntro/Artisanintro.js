@@ -38,7 +38,7 @@ export default function ArtisanIntro() {
       </p>
 
       <div className={styles.actions}>
-        <Link href="/story">View Photos</Link>
+        <Link href="/photos">View Photos</Link>
 
         <Link href="/films">View Films</Link>
       </div>
