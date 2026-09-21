@@ -20,6 +20,8 @@ const polaroid1 =
 const polaroid2 =
   "https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=800&q=80";
 
+const s3ImagesUrl = process.env.NEXT_PUBLIC_S3_IMAGES_URL;
+
 export default function Home() {
   return (
     <>
@@ -179,14 +181,14 @@ export default function Home() {
               <div className="hidden lg:block">
                 <div className="polaroid float-slow relative z-10 ml-auto w-48 -rotate-[8deg] bg-white p-3 pb-7 shadow-[0_18px_30px_rgba(60,45,29,0.20)]">
                   <img
-                    src="/photos/7.webp"
+                    src={`${s3ImagesUrl}/photos/7.webp`}
                     alt="Newlyweds sharing a moment"
                     className="h-56 w-full object-cover"
                   />
                 </div>
                 <div className="polaroid relative -mt-12 ml-0 w-32 rotate-[7deg] bg-white p-2 pb-5 shadow-[0_14px_28px_rgba(60,45,29,0.18)]">
                   <img
-                    src="/photos/10.webp"
+                    src={`${s3ImagesUrl}/photos/10.webp`}
                     alt="Wedding detail"
                     className="h-32 w-full object-cover grayscale"
                   />
@@ -198,14 +200,14 @@ export default function Home() {
               <div className="hidden lg:block">
                 <div className="polaroid r float-slow relative z-10 mr-auto w-48 rotate-[8deg] bg-white p-3 pb-7 shadow-[0_18px_30px_rgba(60,45,29,0.20)]">
                   <img
-                    src="/photos/13.webp"
+                    src={`${s3ImagesUrl}/photos/13.webp`}
                     alt="Wedding venue at sunset"
                     className="h-56 w-full object-cover"
                   />
                 </div>
                 <div className="polaroid r relative -mt-16 ml-28 w-32 -rotate-[6deg] bg-white p-2 pb-5 shadow-[0_14px_28px_rgba(60,45,29,0.18)]">
                   <img
-                    src="/photos/15.webp"
+                    src={`${s3ImagesUrl}/photos/15.webp`}
                     alt="Wedding flowers"
                     className="h-32 w-full object-cover"
                   />

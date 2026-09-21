@@ -10,12 +10,14 @@ export const metadata = {
   alternates: { canonical: "/story" },
 };
 
+const s3ImagesUrl = process.env.NEXT_PUBLIC_S3_IMAGES_URL;
+
 const team = [
   {
     name: "Ajay",
     role: "Photographer",
     note: "Finds beauty in the in-between moments.",
-    image: "/photos/6.webp",
+    image: `${s3ImagesUrl}/photos/6.webp`,
     socials: [
       {
         label: "Instagram",
@@ -33,7 +35,7 @@ const team = [
     name: "Shruti",
     role: "Filmmaker",
     note: "Turns emotions into timeless films.",
-    image: "/photos/9.webp",
+    image: `${s3ImagesUrl}/photos/9.webp`,
     socials: [
       {
         label: "Instagram",
@@ -177,7 +179,7 @@ export default function StoryPage() {
             <div className="absolute bottom-0 left-2 w-56 -rotate-[8deg] bg-white p-3 pb-8 shadow-[0_16px_32px_rgba(79,55,34,0.18)] sm:w-64">
               <div className="relative aspect-[0.9] overflow-hidden">
                 <Image
-                  src="/photos/14.webp"
+                  src={`${s3ImagesUrl}/photos/14.webp`}
                   alt="A wedding venue reflected in water"
                   fill
                   sizes="256px"
