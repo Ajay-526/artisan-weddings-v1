@@ -11,7 +11,7 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "dkr99ixtwl51t.cloudfront.net",
-        pathname: "/ceremonies/**",
+        pathname: "/**",
       },
     ],
     qualities: [75, 85],
