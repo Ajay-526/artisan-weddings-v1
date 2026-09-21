@@ -8,6 +8,11 @@ const nextConfig = {
         protocol: "https",
         hostname: "pxaulx4cif1wet0u.public.blob.vercel-storage.com",
       },
+      {
+        protocol: "https",
+        hostname: "dkr99ixtwl51t.cloudfront.net",
+        pathname: "/ceremonies/**",
+      },
     ],
     qualities: [75, 85],
   },

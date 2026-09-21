@@ -1,5 +1,7 @@
 export { studio } from "@/lib/studio";
 
+const s3ImagesUrl = process.env.NEXT_PUBLIC_S3_IMAGES_URL;
+
 export const ceremonies = [
   {
     slug: "roka",
@@ -32,12 +34,11 @@ export const ceremonies = [
     quote: "Joy looks best when it stains your skin gold.",
     description:
       "Turmeric, water, cousins, chaos. Haldi is colour in motion — we stay close enough to catch the splash, far enough to honour the ritual.",
-    image: "/ceremonies/haldi.webp",
-    gallery: [
-      "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80",
-    ],
+    image: `/ceremonies/haldi.webp`,
+    gallery: Array.from(
+      { length: 11 },
+      (_, index) => `${s3ImagesUrl}/ceremonies/haldi/image${index + 1}.webp`,
+    ),
     ideology:
       "Haldi is purification dressed as play. Turmeric is antiseptic, auspicious and solar — it is meant to brighten the skin and the spirit before the vows. The paste is applied by married women whose own marriages are considered fortunate, so blessing is transferred through touch. Underneath the yellow mess is a theology of protection: what is marked with haldi is harder for envy to touch.",
     tradition: [
@@ -104,12 +105,11 @@ export const ceremonies = [
     quote: "Seven steps. One breath held by two hundred people.",
     description:
       "The pheras, the vows, the moment the veil lifts. We work like guests who happen to see everything — never louder than the sacred fire.",
-    image: "/ceremonies/wedding.webp",
-    gallery: [
-      "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=1200&q=80",
-    ],
+    image: `/ceremonies/wedding.webp`,
+    gallery: Array.from(
+      { length: 15 },
+      (_, index) => `${s3ImagesUrl}/ceremonies/wedding/image${index + 1}.webp`,
+    ),
     ideology:
       "The Hindu wedding is a yajna — a fire offering — in which two people become one household before gods and witnesses. The seven pheras are seven promises: food, strength, prosperity, family, progeny, health, friendship. Kanyadaan is not a transfer of property; in its oldest reading it is the parents’ last act of giving. The ideology is permanence made of ritual steps so the heart has something to walk on when feeling is not enough.",
     tradition: [
