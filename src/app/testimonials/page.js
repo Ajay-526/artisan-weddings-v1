@@ -30,7 +30,7 @@ const testimonialPhotos = [
   },
   {
     src: `${s3ImagesUrl}/love+stories/vrushank%2Bmounika/image3.webp`,
-    alt: "A couple framed in a wedding portrait",
+    alt: "Wedding couple sharing a quiet look",
     monochrome: true,
   },
 ];
