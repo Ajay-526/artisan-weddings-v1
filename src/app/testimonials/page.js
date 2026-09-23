@@ -8,21 +8,28 @@ export const metadata = {
   alternates: { canonical: "/testimonials" },
 };
 
+const s3ImagesUrl = process.env.NEXT_PUBLIC_S3_IMAGES_URL;
+
 const testimonialPhotos = [
   {
-    src: "https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1200&q=85",
+    src: `${s3ImagesUrl}/love+stories/rachana%2Bsaikrishna/image13.webp`,
     alt: "A newlywed couple sharing a quiet smile",
   },
   {
-    src: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=85",
+    src: `${s3ImagesUrl}/love+stories/sindhu%2Bneeshal/image5.webp`,
     alt: "A wedding couple beneath celebration lights",
   },
   {
-    src: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=1200&q=85",
+    src: `${s3ImagesUrl}/love+stories/saisrinivas%2Bsushma/image13.webp`,
     alt: "Wedding hands and henna details",
   },
   {
-    src: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=85",
+    src: `${s3ImagesUrl}/love+stories/tejashwini%2Bvedanthreddy/image3.webp`,
+    alt: "A couple framed in a wedding portrait",
+    monochrome: true,
+  },
+  {
+    src: `${s3ImagesUrl}/love+stories/vrushank%2Bmounika/image3.webp`,
     alt: "A couple framed in a wedding portrait",
     monochrome: true,
   },
