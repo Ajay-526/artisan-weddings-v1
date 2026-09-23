@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 
 const s3ImagesUrl = process.env.NEXT_PUBLIC_S3_IMAGES_URL;
@@ -27,10 +28,12 @@ export default function TestimonialSlider({ items }) {
         </span>
         <div className="flex flex-col items-center text-center">
           <div className="flex h-20 w-20 items-center justify-center overflow-hidden rounded-full border-2 border-white shadow-md">
-            <img
-              src={`${s3ImagesUrl}/photos/3.webp`}
+            <Image
+              src={`/Artisan Weddings.png`}
               alt="Happy wedding couple"
-              className="h-full w-full object-cover"
+              className="h-full w-full object-cover bg-black"
+              width={100}
+              height={100}
             />
           </div>
           <h3 className="mt-3 font-serif text-2xl font-medium sm:text-[1.7rem]">

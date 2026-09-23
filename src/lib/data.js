@@ -256,25 +256,31 @@ export const testimonials = [
   {
     quote:
       "Artisan Weddings didn’t just take photos, they captured our emotions. Every time we look at our album, we relive the magic.",
-    names: "Shivani & Karthik",
+    names: "Rachana & Sai Krishna",
     city: "Chennai",
   },
   {
     quote:
       "They vanished into the celebration and came back with a film that felt like our memory, not a performance of it.",
-    names: "Meher & Kabir",
+    names: "Sai Srinivas & Sushma",
     city: "Delhi",
   },
   {
     quote:
       "From Haldi chaos to the last song at reception — they treated every hour as if it were the only one that mattered.",
-    names: "Anjali & Dev",
+    names: "Sindhu & Neeshal",
     city: "Pune",
   },
   {
     quote:
       "We hired photographers. We received storytellers. The difference lives in every frame.",
-    names: "Riya & Aditya",
+    names: "Vedhanth Reddy & Tejashwini",
+    city: "Ahmedabad",
+  },
+  {
+    quote:
+      "Artisan Weddings did not pose us into a catalogue. They waited until we forgot they were there — and that is when we look most like ourselves. The album feels like the week we actually lived.",
+    names: "Vrushank & Mounika",
     city: "Ahmedabad",
   },
 ];
