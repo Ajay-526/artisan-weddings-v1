@@ -149,126 +149,102 @@ export const ceremonies = [
 
 export const loveStories = [
   {
-    slug: "aarav-priya",
-    names: "Aarav & Priya",
+    slug: "rachana-sai-krishna",
+    names: "Rachana & Sai Krishna",
     city: "Hyderabad",
     date: "December 2024",
     quote: "They asked us to photograph a wedding. We found a language.",
-    image:
-      "https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1400&q=80",
-    collage: [
-      "https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=1200&q=80",
-    ],
+    image: `${s3ImagesUrl}/love+stories/rachana%2Bsaikrishna/image13.webp`,
+    collage: Array.from(
+      { length: 17 },
+      (_, index) =>
+        `${s3ImagesUrl}/love+stories/rachana%2Bsaikrishna/image${index + 1}.webp`,
+    ),
     story:
       "A courtyard in old Hyderabad, a December that forgot to be cold, and two families who cook the same biryani with different pride. Aarav and Priya wanted less production, more porch-light. We followed them from roka sweets to a reception that ended on the terrace.",
     testimonial:
       "Artisan Weddings did not pose us into a catalogue. They waited until we forgot they were there — and that is when we look most like ourselves. The album feels like the week we actually lived.",
   },
   {
-    slug: "siddharth-ananya",
-    names: "Siddharth & Ananya",
+    slug: "neeshal-sindhu",
+    names: "Neeshal & Sindhu",
     city: "Bangalore",
     date: "February 2025",
     quote: "A sunset that waited for them.",
-    image:
-      "https://images.unsplash.com/photo-1522673607200-16421f1f03c6?auto=format&fit=crop&w=1400&q=80",
-    collage: [
-      "https://images.unsplash.com/photo-1522673607200-16421f1f03c6?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1200&q=80",
-    ],
+    image: `${s3ImagesUrl}/love+stories/sindhu%2Bneeshal/image5.webp`,
+    collage: Array.from(
+      { length: 26 },
+      (_, index) =>
+        `${s3ImagesUrl}/love+stories/sindhu%2Bneeshal/image${index + 1}.webp`,
+    ),
     story:
       "They chose a farmhouse on the city’s edge so the sky could do half the work. Ananya’s mehendi ran past midnight; Siddharth’s brothers wrote a sangeet that was mostly roasting. The pheras happened under rain that arrived exactly on time.",
     testimonial:
       "Every time we open the film we hear the rain on the mandap again. That is not documentation. That is time travel. Thank you for treating our chaos as sacred.",
   },
   {
-    slug: "rohit-meera",
-    names: "Rohit & Meera",
+    slug: "sai-srinivas-sushma",
+    names: "Sai Srinivas & Sushma",
     city: "Goa",
     date: "November 2024",
     quote: "Salt on their skin. Forever in their eyes.",
-    image:
-      "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1400&q=80",
-    collage: [
-      "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1522673607200-16421f1f03c6?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1583939411023-14783179e581?auto=format&fit=crop&w=1200&q=80",
-    ],
+    image: `${s3ImagesUrl}/love+stories/saisrinivas%2Bsushma/image13.webp`,
+    collage: Array.from(
+      { length: 17 },
+      (_, index) =>
+        `${s3ImagesUrl}/love+stories/saisrinivas%2Bsushma/image${index + 1}.webp`,
+    ),
     story:
       "A Portuguese villa, a beach that kept changing colour, and a guest list small enough to know everyone’s drink. Meera walked barefoot to the mandap. Rohit cried before she did. We shot until the tide erased the footprints.",
     testimonial:
       "We still send friends the portrait from the last light. Salt in our hair, no posing left in us. That picture is why we hired them — even before it existed.",
   },
   {
-    slug: "karan-nisha",
-    names: "Karan & Nisha",
+    slug: "akarshith-sreeja",
+    names: "Akarshith & Sreeja",
     city: "Udaipur",
     date: "January 2025",
     quote: "A palace, a lake, and two people who forgot the camera was there.",
-    image:
-      "https://images.unsplash.com/photo-1583939411023-14783179e581?auto=format&fit=crop&w=1400&q=80",
-    collage: [
-      "https://images.unsplash.com/photo-1583939411023-14783179e581?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=1200&q=80",
-    ],
+    image: `${s3ImagesUrl}/love+stories/sreeja%2Bakarshith/image5.webp`,
+    collage: Array.from(
+      { length: 22 },
+      (_, index) =>
+        `${s3ImagesUrl}/love+stories/sreeja%2Bakarshith/image${index + 1}.webp`,
+    ),
     story:
       "Marble, lake wind, and a baraat that took the long way around the city. Nisha’s lehenga held the whole of evening. We used the palace as a corridor, not a set — corners, windows, the quiet after fireworks.",
     testimonial:
       "They understood that a palace can bully a photograph. They made us larger than the architecture. Our parents cried at the film. That is the only review that matters.",
   },
   {
-    slug: "vikram-isha",
-    names: "Vikram & Isha",
+    slug: "vedanth-tejashwini",
+    names: "Vedanth Reddy & Tejashwini",
     city: "Jaipur",
     date: "March 2025",
     quote: "Pink city. Quiet vows.",
-    image:
-      "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=1400&q=80",
-    collage: [
-      "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1583939411023-14783179e581?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1200&q=80",
-    ],
+    image: `${s3ImagesUrl}/love+stories/tejashwini%2Bvedanthreddy/image3.webp`,
+    collage: Array.from(
+      { length: 21 },
+      (_, index) =>
+        `${s3ImagesUrl}/love+stories/tejashwini%2Bvedanthreddy/image${index + 1}.webp`,
+    ),
     story:
       "Haveli courtyards and a haldi so yellow the walls looked new. Isha wanted the city in the pictures without the city taking over. We walked them through lanes at dawn, then returned them to the ritual.",
     testimonial:
       "The dawn walk is our favourite sequence. Jaipur looks like it was built for us that morning. We did not know we could look that calm on our own wedding day.",
   },
   {
-    slug: "arjun-diya",
-    names: "Arjun & Diya",
+    slug: "vrushank-mounika",
+    names: "Vrushank & Mounika",
     city: "Mumbai",
     date: "April 2025",
     quote: "The city paused. They did not.",
-    image:
-      "https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=1400&q=80",
-    collage: [
-      "https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1522673607200-16421f1f03c6?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=1200&q=80",
-    ],
+    image: `${s3ImagesUrl}/love+stories/vrushank%2Bmounika/image3.webp`,
+    collage: Array.from(
+      { length: 34 },
+      (_, index) =>
+        `${s3ImagesUrl}/love+stories/vrushank%2Bmounika/image${index + 1}.webp`,
+    ),
     story:
       "A sea-facing club, a baraat on a rain-slick road, and a reception that ran until the staff started stacking chairs. Mumbai gave us neon and monsoon. They gave us a stillness in the middle of it.",
     testimonial:
