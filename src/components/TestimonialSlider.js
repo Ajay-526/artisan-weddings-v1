@@ -31,9 +31,9 @@ export default function TestimonialSlider({ items }) {
             <Image
               src={`/Artisan Weddings.png`}
               alt="Happy wedding couple"
-              className="h-full w-full object-cover bg-black"
-              width={100}
-              height={100}
+              className="h-full w-full object-contain bg-black"
+              width={80}
+              height={80}
             />
           </div>
           <h3 className="mt-3 font-serif text-2xl font-medium sm:text-[1.7rem]">
