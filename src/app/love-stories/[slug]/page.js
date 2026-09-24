@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { loveStories } from "@/lib/data";
+import LoveStoryAlbum from "@/components/love-stories/LoveStoryAlbum";
 
 export function generateStaticParams() {
   return loveStories.map((story) => ({
@@ -95,30 +96,7 @@ export default async function LoveStoryPage({ params }) {
         <p className="leading-8 text-[#3f342c]">{story.story}</p>
       </section>
 
-      {/* Album */}
-      <section className="bg-[#f4eee4] px-6 py-16">
-        <div className="mx-auto max-w-5xl">
-          <p className="section-label">THE ALBUM</p>
-
-          <h2 className="mt-2 font-serif text-3xl">
-            A collage from their days
-          </h2>
-
-          <div className="collage mt-8">
-            {story.collage.map((src, index) => (
-              <Image
-                key={`${src}-${index}`}
-                src={src}
-                alt={`${story.names} wedding photograph ${index + 1}`}
-                width={1200}
-                height={900}
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="h-auto w-full"
-              />
-            ))}
-          </div>
-        </div>
-      </section>
+      <LoveStoryAlbum names={story.names} collage={story.collage} />
 
       {/* Testimonial */}
       <section className="px-6 py-16">
