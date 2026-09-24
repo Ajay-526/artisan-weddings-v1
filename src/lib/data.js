@@ -128,11 +128,11 @@ export const ceremonies = [
     description:
       "Entrance, first dance, late-night portraits when the lights go warm. Reception is where formality loosens and the real smiles arrive.",
     image: "/ceremonies/reception.webp",
-    gallery: [
-      "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1522673607200-16421f1f03c6?auto=format&fit=crop&w=1200&q=80",
-    ],
+    gallery: Array.from(
+      { length: 14 },
+      (_, index) =>
+        `${s3ImagesUrl}/ceremonies/reception/image${index + 1}.webp`,
+    ),
     ideology:
       "The reception is the couple’s first act as hosts. What was sacred in the morning becomes social in the evening — the community is invited to eat in the new household’s name. In many Indian cities it is also the portrait hour: lehengas at their heaviest, sherwanis at their sharpest, a stage that says we have arrived. The ideology is hospitality. Marriage is not complete until it has fed the people who walked it there.",
     tradition: [
