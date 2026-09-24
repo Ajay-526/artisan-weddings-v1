@@ -26,14 +26,17 @@ export async function generateMetadata({ params }) {
 export default async function CeremonyPage({ params }) {
   const { slug } = await params;
   const c = ceremonies.find((x) => x.slug === slug);
+
   if (!c) notFound();
-  const gallery = Array.from(
-    new Set([
-      ...c.gallery,
-      ...ceremonies.flatMap((ceremony) => ceremony.gallery),
-      c.image,
-    ]),
-  ).slice(0, 12);
+  // const gallery = Array.from(
+  //   new Set([
+  //     ...c.gallery,
+  //     ...ceremonies.flatMap((ceremony) => ceremony.gallery),
+  //     c.image,
+  //   ]),
+  // );
+
+  const gallery = c.gallery;
 
   return (
     <article>

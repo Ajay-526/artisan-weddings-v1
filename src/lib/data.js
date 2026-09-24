@@ -36,7 +36,7 @@ export const ceremonies = [
       "Turmeric, water, cousins, chaos. Haldi is colour in motion — we stay close enough to catch the splash, far enough to honour the ritual.",
     image: `/ceremonies/haldi.webp`,
     gallery: Array.from(
-      { length: 11 },
+      { length: 22 },
       (_, index) => `${s3ImagesUrl}/ceremonies/haldi/image${index + 1}.webp`,
     ),
     ideology:
@@ -58,11 +58,10 @@ export const ceremonies = [
     description:
       "Hours of patience, songs in the courtyard, hidden initials in the design. Mehendi is slow art — we photograph the waiting as much as the finished pattern.",
     image: "/ceremonies/mehendi.webp",
-    gallery: [
-      "https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=1200&q=80",
-    ],
+    gallery: Array.from(
+      { length: 10 },
+      (_, index) => `${s3ImagesUrl}/ceremonies/mehendi/image${index + 1}.webp`,
+    ),
     ideology:
       "Mehendi is patience made visible. The darker the stain, the stronger the love — that is the folklore, and families still watch the colour come up as if it were a weather report of the marriage. Designs hide the groom’s initials; finding them is his first task as a husband. The ideology is intimacy delayed: beauty that cannot be rushed, a night that asks the bride to sit still while the house sings around her.",
     tradition: [
@@ -107,7 +106,7 @@ export const ceremonies = [
       "The pheras, the vows, the moment the veil lifts. We work like guests who happen to see everything — never louder than the sacred fire.",
     image: `/ceremonies/wedding.webp`,
     gallery: Array.from(
-      { length: 15 },
+      { length: 22 },
       (_, index) => `${s3ImagesUrl}/ceremonies/wedding/image${index + 1}.webp`,
     ),
     ideology:
@@ -190,7 +189,7 @@ export const loveStories = [
     quote: "Salt on their skin. Forever in their eyes.",
     image: `${s3ImagesUrl}/love+stories/saisrinivas%2Bsushma/image13.webp`,
     collage: Array.from(
-      { length: 17 },
+      { length: 25 },
       (_, index) =>
         `${s3ImagesUrl}/love+stories/saisrinivas%2Bsushma/image${index + 1}.webp`,
     ),
