@@ -47,7 +47,7 @@ export default async function CeremonyPage({ params }) {
           fill
           priority
           sizes="100vw"
-          className="h-full w-full object-cover object-top-left kenburns"
+          className="h-full w-full object-cover object-[50%_40%] kenburns"
         />
         <div className="absolute inset-0 bg-black/50" />
         <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center text-white">

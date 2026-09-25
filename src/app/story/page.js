@@ -103,12 +103,12 @@ export default function StoryPage() {
     <article className="overflow-hidden bg-[#faf7f1] pt-[63px] text-[#2b241f] lg:pt-0">
       <header className="relative isolate flex min-h-[24rem] items-center overflow-hidden px-6 py-20 text-[#fbf8f2] sm:min-h-[42rem] lg:min-h-[38rem] lg:px-20">
         <Image
-          src="https://images.unsplash.com/photo-1708126755910-1e2295d359dd?q=80&w=1479&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          src={`${s3ImagesUrl}/love+stories/saisrinivas%2Bsushma/image22.webp`}
           alt="Wedding couple sharing a quiet moment"
           fill
           priority
           sizes="100vw"
-          className="-z-20 object-cover object-top"
+          className="-z-20 object-cover  object-[50%_40%]"
         />
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(20,18,14,0.78)_0%,rgba(26,22,17,0.52)_42%,rgba(26,22,17,0.1)_78%),linear-gradient(0deg,rgba(20,18,14,0.28),transparent_45%)]" />
         <div className="mx-auto w-full max-w-7xl">

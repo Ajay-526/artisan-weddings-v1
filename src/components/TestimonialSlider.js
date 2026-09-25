@@ -39,9 +39,9 @@ export default function TestimonialSlider({ items }) {
           <h3 className="mt-3 font-serif text-2xl font-medium sm:text-[1.7rem]">
             {t.names}
           </h3>
-          <p className="mt-1 text-[0.68rem] font-medium tracking-[0.30em] text-[#a87336]">
+          {/* <p className="mt-1 text-[0.68rem] font-medium tracking-[0.30em] text-[#a87336]">
             {t.city.toUpperCase()}
-          </p>
+          </p> */}
           <div
             className="mt-5 flex gap-1 text-[#af7833]"
             aria-label="5 out of 5 stars"

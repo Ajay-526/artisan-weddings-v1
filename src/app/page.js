@@ -6,6 +6,7 @@ import FilmPlayer from "@/components/FilmPlayer";
 import Reveal from "@/components/Reveal";
 import ArtisanIntro from "@/components/ArtisanIntro/Artisanintro";
 import OurWorkCarousel from "@/components/OurWorkCarousel/OurWorkCarousel";
+import YoutubePlayer from "@/components/youtube-viewer";
 
 const heroImg =
   "https://dkr99ixtwl51t.cloudfront.net/videos/Website%20reel.mp4";
@@ -87,7 +88,7 @@ export default function Home() {
             </Reveal> */}
             <Reveal delay={140} className=" w-full sm:-mt-6">
               <div className="mx-auto w-full max-w-5xl overflow-hidden rounded-sm border border-white/10 bg-black/40 shadow-2xl">
-                <FilmPlayer film={films[0]} />
+                <YoutubePlayer film={films[0]} />
               </div>
             </Reveal>
           </div>

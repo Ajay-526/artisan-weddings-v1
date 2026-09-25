@@ -40,7 +40,7 @@ export default function TestimonialsPage() {
     <article className="overflow-hidden bg-[#faf7f1] pt-[63px] text-[#29221e] lg:pt-0">
       <header className="relative isolate min-h-[18rem] overflow-hidden px-6 py-14 sm:min-h-[22rem] lg:px-16 lg:py-16">
         <Image
-          src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=2000&q=85"
+          src={`${s3ImagesUrl}/ceremonies/engagement/image21.webp`}
           alt="Wedding stationery and flowers"
           fill
           priority
@@ -105,9 +105,9 @@ export default function TestimonialsPage() {
                         <p className="text-lg text-[#2d2521]">
                           {testimonial.names}
                         </p>
-                        <p className="mt-1 text-[0.68rem] font-medium tracking-[0.28em] text-[#83766b]">
+                        {/* <p className="mt-1 text-[0.68rem] font-medium tracking-[0.28em] text-[#83766b]">
                           {testimonial.city.toUpperCase()}
-                        </p>
+                        </p> */}
                       </div>
                     </footer>
                   </blockquote>

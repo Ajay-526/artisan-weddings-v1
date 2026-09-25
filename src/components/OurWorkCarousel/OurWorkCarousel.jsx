@@ -14,60 +14,60 @@ const images = [
   {
     src: `${s3ImagesUrl}/love+stories/vrushank%2Bmounika/image10.webp`,
     couple: "Vrushank & Mounika",
-    location: "Hyderabad",
+    // location: "Hyderabad",
     category: "Wedding",
   },
   {
     src: `${s3ImagesUrl}/love+stories/vrushank%2Bmounika/image7.webp`,
     couple: "Vrushank & Mounika",
-    location: "Hyderabad",
+    // location: "Hyderabad",
     category: "Cute Moment",
   },
   {
     src: `${s3ImagesUrl}/love+stories/saisrinivas%2Bsushma/image18.webp`,
     couple: "Sai Srinivas & Sushma",
-    location: "Bangalore",
+    // location: "Bangalore",
     category: "Wedding",
   },
   {
     src: `${s3ImagesUrl}/love+stories/saisrinivas%2Bsushma/image14.webp`,
     couple: "Sai Srinivas & Sushma",
-    location: "Bangalore",
+    // location: "Bangalore",
     category: "Pre Wedding",
   },
   {
     src:`${s3ImagesUrl}/love+stories/rachana%2Bsaikrishna/image3.webp`,
     couple: "Rachana & Sai Krishna",
-    location: "Goa",
+    // location: "Goa",
     category: "Haldi",
   },
    {
     src:`${s3ImagesUrl}/love+stories/rachana%2Bsaikrishna/image8.webp`,
     couple: "Rachana & Sai Krishna",
-    location: "Goa",
+    // location: "Goa",
     category: "Love",
   },
   {
     src: `${s3ImagesUrl}/love+stories/sreeja%2Bakarshith/image12.webp`,
     couple: "Akarshith & Sreeja",
-    location: "Udaipur",
+    // location: "Udaipur",
     category: "Wedding",
   },
   {
     src: `${s3ImagesUrl}/love+stories/sreeja%2Bakarshith/image19.webp`,
     couple: "Akarshith & Sreeja",
-    location: "Udaipur",
+    // location: "Udaipur",
     category: "Happy",
   },
   {
     src: "/images/DSC03140 copy.webp",
-    couple: "Sindhu & Neeshal",
-    location: "Jaipur",
+    couple: "Sindhu & Nishanth",
+    // location: "Jaipur",
     category: "Ceremony",
   },{
     src: `${s3ImagesUrl}/love+stories/sindhu%2Bneeshal/image19.webp`,
-    couple: "Sindhu & Neeshal",
-    location: "Jaipur",
+    couple: "Sindhu & Nishanth",
+    // location: "Jaipur",
     category: "Celebration",
   },
 ];
@@ -132,7 +132,7 @@ export default function OurWorkCarousel() {
                 <div className={styles.imageInfo}>
                   <span>{image.category}</span>
                   <h3>{image.couple}</h3>
-                  <p>{image.location}</p>
+                  {/* <p>{image.location}</p> */}
                 </div>
               </div>
             </SwiperSlide>
