@@ -11,26 +11,25 @@ export const metadata = {
 export default function FilmsPage() {
   return (
     <div className="pt-24">
-      <div className="mx-auto max-w-6xl px-6 py-16">
+      <div className="mx-auto max-w-7xl px-6 py-16">
         <p className="section-label">WEDDING FILMS</p>
+
         <h1 className="mt-3 font-serif text-4xl md:text-5xl">
           Relive the emotions in motion
         </h1>
+
         <p className="script mt-3 text-xl text-[#9a6b2f]">
-          Tap a film. It plays here in a YouTube player — no new tab.
+          Tap a film to watch the story unfold.
         </p>
-        <div className="mt-12 grid gap-8 md:grid-cols-2">
-          {films.map((f) => (
-            <article
-              key={f.title}
-              className="overflow-hidden rounded-sm bg-[#16110f] text-white"
-            >
-              <FilmPlayer film={f} />
-              <div className="p-4">
-                <h2 className="font-serif text-xl">{f.title}</h2>
-                <p className="text-xs text-[#d8cbb8]">{f.couple}</p>
-              </div>
-            </article>
+
+        {/* 1 column mobile / 3 columns desktop */}
+        <div className="mt-12 grid grid-cols-1 gap-x-6 gap-y-10 md:grid-cols-3">
+          {films.map((film, index) => (
+            <FilmPlayer
+              key={`${film.youtubeId}-${index}`}
+              film={film}
+              films={films}
+            />
           ))}
         </div>
       </div>
