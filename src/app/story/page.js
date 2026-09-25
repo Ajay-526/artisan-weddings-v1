@@ -196,7 +196,7 @@ export default function StoryPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden border-t border-[#eee6dc] px-6 py-20 sm:py-28 lg:px-16">
+      {/* <section className="relative overflow-hidden border-t border-[#eee6dc] px-6 py-20 sm:py-28 lg:px-16">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_25%,#fffdf9,rgba(246,241,233,0.82)_65%,#ebe5dc)]" />
         <div className="relative mx-auto max-w-6xl">
           <div className="text-center">
@@ -245,7 +245,7 @@ export default function StoryPage() {
             ALWAYS REAL.
           </p>
         </div>
-      </section>
+      </section> */}
     </article>
   );
 }
