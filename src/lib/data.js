@@ -4,18 +4,18 @@ const s3ImagesUrl = process.env.NEXT_PUBLIC_S3_IMAGES_URL;
 
 export const ceremonies = [
   {
-    slug: "roka",
-    title: "Roka",
+    slug: "engagement",
+    title: "Engagement",
     tagline: "A promise begins",
     quote: "Two families meet. Two hearts already know.",
     description:
       "Roka is the quiet yes before the world is told. We photograph the first exchange of blessings, the shy glances, the weight of rings still new on the finger.",
     image: "/ceremonies/roka.webp",
-    gallery: [
-      "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=1200&q=80",
-    ],
+    gallery: Array.from(
+      { length: 21 },
+      (_, index) =>
+        `${s3ImagesUrl}/ceremonies/engagement/image${index + 1}.webp`,
+    ),
     ideology:
       "Roka comes from the word rokna — to stop, to stay. It is the moment two families agree that the search is over. In North Indian tradition it is less a spectacle than a seal: a tilak on the forehead, sweets exchanged, a ring that is still learning the shape of a hand. The ideology is simple and old — marriage begins with consent of the house, not only of the heart.",
     tradition: [
@@ -81,11 +81,10 @@ export const ceremonies = [
     description:
       "Stage lights, mismatched choreography, uncles who steal the show. Sangeet is cinema without a script — we film the pulse of the room.",
     image: "/images/DSC_1344 copy.webp",
-    gallery: [
-      "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80",
-    ],
+    gallery: Array.from(
+      { length: 16 },
+      (_, index) => `${s3ImagesUrl}/ceremonies/sangeet/image${index + 1}.webp`,
+    ),
     ideology:
       "Sangeet once meant women gathering to sing the bride into her new life. It has grown into a night of choreography and theatre, but the ideology has not changed: joy must be loud enough that sorrow cannot sit down. Two families rehearse as one troupe. The stage is an excuse; the real ritual is that strangers become cousins before the pheras.",
     tradition: [
