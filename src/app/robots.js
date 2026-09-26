@@ -1,6 +1,8 @@
 import { siteConfig } from "@/lib/seo";
 
 export default function robots() {
+  const baseUrl = siteConfig.url.replace(/\/$/, "");
+
   return {
     rules: [
       {
@@ -8,7 +10,7 @@ export default function robots() {
         allow: "/",
       },
     ],
-    sitemap: `${siteConfig.url}/sitemap.xml`,
-    host: siteConfig.url,
+    sitemap: `${baseUrl}/sitemap.xml`,
+    host: baseUrl,
   };
 }
