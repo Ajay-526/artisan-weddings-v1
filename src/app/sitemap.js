@@ -3,6 +3,7 @@ export default function sitemap() {
   const staticRoutes = [
     "",
     "/story",
+    "/photos",
     "/ceremonies",
     "/films",
     "/love-stories",
@@ -29,5 +30,12 @@ export default function sitemap() {
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...ceremonyRoutes, ...storyRoutes];
+  const filmRoutes = films.map((f) => ({
+    url: `${siteConfig.url}/films/${f.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
+
+  return [...staticRoutes, ...ceremonyRoutes, ...storyRoutes, ...filmRoutes];
 }
