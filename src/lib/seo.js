@@ -1,5 +1,7 @@
 import { studio, socialLinks } from "@/lib/studio";
 
+const s3ImagesUrl = process.env.NEXT_PUBLIC_S3_IMAGES_URL;
+
 export const siteConfig = {
   name: "Artisan Weddings",
   shortName: "Artisan Weddings",
@@ -12,8 +14,7 @@ export const siteConfig = {
   email: studio.email,
   phone: studio.phone || undefined,
   sameAs: socialLinks(),
-  defaultOgImage:
-    "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80",
+  defaultOgImage: `${s3ImagesUrl}/Artisan+Weddings+Black.jpg`,
 };
 
 export function pageMeta({

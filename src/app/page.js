@@ -8,20 +8,10 @@ import ArtisanIntro from "@/components/ArtisanIntro/Artisanintro";
 import OurWorkCarousel from "@/components/OurWorkCarousel/OurWorkCarousel";
 import YoutubePlayer from "@/components/youtube-viewer";
 
+const s3ImagesUrl = process.env.NEXT_PUBLIC_S3_IMAGES_URL;
+
 const heroImg =
   "https://dkr99ixtwl51t.cloudfront.net/videos/Website%20reel.mp4";
-const mehendiHands =
-  "https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=1600&q=80";
-const filmBg =
-  "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=2000&q=80";
-const kindBg =
-  "https://images.unsplash.com/photo-1629756048377-09540f52caa1?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
-const polaroid1 =
-  "https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=800&q=80";
-const polaroid2 =
-  "https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=800&q=80";
-
-const s3ImagesUrl = process.env.NEXT_PUBLIC_S3_IMAGES_URL;
 
 export default function Home() {
   return (
@@ -72,7 +62,7 @@ export default function Home() {
 
         <section className="relative lg:min-h-screen overflow-hidden px-6 py-20 text-white lg:px-10">
           <img
-            src={filmBg}
+            src={`${s3ImagesUrl}/photos/12.webp`}
             alt=""
             className="absolute inset-0 h-full w-full object-cover"
           />
