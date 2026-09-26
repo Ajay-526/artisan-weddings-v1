@@ -65,9 +65,16 @@ export default function Footer() {
             ))}
           </nav>
         )}
-        <div className="flex items-center gap-4 text-xs text-[#cbbba6]">
-          <span>Weddings across India</span>
-          <span>© 2026 Artisan Weddings</span>
+        <div>
+          <div className="flex flex-col gap-2 items-center text-xs">
+            <div className="flex items-center gap-4 text-xs text-[#cbbba6]">
+              <span>Weddings across India</span>
+              <span>© 2026 Artisan Weddings</span>
+            </div>
+            <Link href="/privacy-policy" className="underline">
+              Privacy Policy
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

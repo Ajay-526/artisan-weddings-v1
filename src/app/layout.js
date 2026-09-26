@@ -43,6 +43,9 @@ export const metadata = {
     "Haldi Mehendi Sangeet photographer",
     "cinematic wedding film",
     "Artisan Weddings",
+    "wedding photographers India",
+    "wedding videography India",
+    "wedding photography India",
   ],
   authors: [{ name: siteConfig.name, url: siteConfig.url }],
   creator: siteConfig.name,
@@ -52,7 +55,13 @@ export const metadata = {
   robots: {
     index: true,
     follow: true,
-    googleBot: { index: true, follow: true, "max-image-preview": "large" },
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
   openGraph: {
     type: "website",
