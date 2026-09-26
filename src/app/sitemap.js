@@ -1,3 +1,5 @@
+import { siteConfig } from "@/lib/seo";
+
 export default function sitemap() {
   const now = new Date();
   const staticRoutes = [
