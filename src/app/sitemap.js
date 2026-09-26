@@ -1,3 +1,4 @@
+import { ceremonies, films, loveStories } from "@/lib/data";
 import { siteConfig } from "@/lib/seo";
 
 export default function sitemap() {
