@@ -1,12 +1,13 @@
 import Image from "next/image";
 import { testimonials } from "@/lib/data";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMeta({
   title: "Testimonials",
   description:
     "What couples across India say about Artisan Weddings photography and films.",
-  alternates: { canonical: "/testimonials" },
-};
+  path: "/testimonials",
+});
 
 const s3ImagesUrl = process.env.NEXT_PUBLIC_S3_IMAGES_URL;
 

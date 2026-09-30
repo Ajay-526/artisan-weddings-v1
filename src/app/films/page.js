@@ -1,12 +1,13 @@
 import { films } from "@/lib/data";
 import FilmPlayer from "@/components/FilmPlayer";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMeta({
   title: "Wedding Films",
   description:
-    "Cinematic Indian wedding films. Watch highlight films on this site in an in-page YouTube player.",
-  alternates: { canonical: "/films" },
-};
+    "Cinematic Indian wedding films by Artisan Weddings. Watch our wedding highlight films and relive the emotions in motion.",
+  path: "/films",
+});
 
 export default function FilmsPage() {
   return (

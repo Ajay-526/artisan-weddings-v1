@@ -59,7 +59,7 @@ export default function LoveStoryAlbum({ names, collage }) {
                     alt={`${names} wedding photograph ${i + 1}`}
                     width={width}
                     height={height}
-                    sizes="(max-width: 768px) 100vw, 50vw"
+                    sizes="(min-width: 640px) 33vw, 100vw"
                     className="h-auto w-full object-contain transition duration-700 group-hover:scale-105"
                   />
                 </button>

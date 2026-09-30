@@ -9,7 +9,7 @@ export default function ArtisanIntro() {
   return (
     <section className={styles.section}>
       <div className={styles.top}>
-        <h4 className={styles.eyebrow}>ARTISAN WEDDINGS</h4>
+        <p className={styles.eyebrow}>ARTISAN WEDDINGS</p>
 
         {/* <h2>
           Made of moments.

@@ -1,12 +1,13 @@
 import EnquiryForm from "@/components/EnquiryForm";
 import { studio, whatsappDisplay } from "@/lib/studio";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata = {
-  title: "Enquire",
+export const metadata = pageMeta({
+  title: "Contact & Enquire",
   description:
     "Book Artisan Weddings for your Indian wedding. Send an enquiry by WhatsApp, Instagram or email.",
-  alternates: { canonical: "/contact" },
-};
+  path: "/contact",
+});
 
 export default function ContactPage() {
   const phoneLabel = whatsappDisplay() || studio.phone;

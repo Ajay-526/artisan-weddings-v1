@@ -1,15 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMeta({
   title: "Enquiry Received",
   description: "Your Artisan Weddings enquiry has been received.",
-  robots: { index: false, follow: false },
-};
+  path: "/contact/success",
+  noIndex: true,
+});
 
 export default function ContactSuccessPage() {
   return (
-    <main className="flex min-h-[70vh] items-center justify-center px-6 py-24 text-center">
+    <div className="flex min-h-[70vh] items-center justify-center px-6 py-24 text-center">
       <div className="max-w-xl">
         <Image
           src="/success.png"
@@ -29,6 +31,6 @@ export default function ContactSuccessPage() {
           Back to home
         </Link>
       </div>
-    </main>
+    </div>
   );
 }

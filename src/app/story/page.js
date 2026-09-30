@@ -2,13 +2,14 @@ import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import { studio } from "@/lib/studio";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMeta({
   title: "Our Story",
   description:
     "Why Artisan Weddings photographs Indian weddings as they are felt — quiet work, true frames, films that remember.",
-  alternates: { canonical: "/story" },
-};
+  path: "/story",
+});
 
 const s3ImagesUrl = process.env.NEXT_PUBLIC_S3_IMAGES_URL;
 

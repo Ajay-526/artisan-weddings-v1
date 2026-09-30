@@ -1,6 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  poweredByHeader: false,
   images: {
+    // AVIF is ~20-30% smaller than WebP; browsers without AVIF get WebP.
+    formats: ["image/avif", "image/webp"],
+    // Photos rarely change, so keep optimized copies cached for 30 days
+    // instead of the 4-hour default.
+    minimumCacheTTL: 60 * 60 * 24 * 30,
     remotePatterns: [
       { protocol: "https", hostname: "images.unsplash.com" },
       { protocol: "https", hostname: "plus.unsplash.com" },
@@ -13,8 +19,23 @@ const nextConfig = {
         hostname: "dkr99ixtwl51t.cloudfront.net",
         pathname: "/**",
       },
+      { protocol: "https", hostname: "i.ytimg.com", pathname: "/vi/**" },
     ],
-    qualities: [75, 85],
+    qualities: [75, 80, 85],
+  },
+  async headers() {
+    return [
+      {
+        // Hero video and other static media in /public never change in place.
+        source: "/videos/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+    ];
   },
 };
 

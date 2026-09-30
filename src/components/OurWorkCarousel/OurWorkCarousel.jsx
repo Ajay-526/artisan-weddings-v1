@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useRef } from "react";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -80,7 +81,7 @@ export default function OurWorkCarousel() {
 
       {/* Header */}
       <div className={styles.header}>
-        <h4 className={styles.eyebrow}>OUR WORK</h4>
+        <p className={styles.eyebrow}>OUR WORK</p>
 
         <h2>
           Moments worth
@@ -93,9 +94,9 @@ export default function OurWorkCarousel() {
         </p>
         <div className="mt-6.25">
 
-         <a href="/love-stories" className={styles.explore}>
+         <Link href="/love-stories" className={styles.explore}>
           Explore Love Stories
-        </a>
+        </Link>
         </div>
       </div>
 
@@ -117,14 +118,13 @@ export default function OurWorkCarousel() {
           }}
           className={styles.swiper}
         >
-          {images.map((image, index) => (
+          {images.map((image) => (
             <SwiperSlide key={image.src} className={styles.swiperSlide}>
               <div className={styles.mainSlide}>
                 <Image
                   src={image.src}
                   alt={image.couple}
                   fill
-                  priority={index === 0}
                   sizes="(min-width: 1024px) 52vw, 92vw"
                   className={styles.image}
                 />

@@ -1,13 +1,16 @@
 import Link from "next/link";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMeta({
   title: "Privacy Policy",
-  description: "Privacy policy for Artisan Weddings.",
-};
+  description:
+    "How Artisan Weddings uses the details you share through our wedding enquiry form.",
+  path: "/privacy-policy",
+});
 
 export default function PrivacyPolicyPage() {
   return (
-    <main className="mx-auto max-w-3xl px-6 py-32 text-[#1c1612] lg:px-8">
+    <div className="mx-auto max-w-3xl px-6 py-32 text-[#1c1612] lg:px-8">
       <p className="section-label">ARTISAN WEDDINGS</p>
       <h1 className="mt-4 font-serif text-4xl md:text-5xl">Privacy Policy</h1>
       <div className="mt-8 space-y-5 text-sm leading-7 text-[#4a4038]">
@@ -28,6 +31,6 @@ export default function PrivacyPolicyPage() {
       <Link href="/contact" className="btn-wine mt-8">
         Contact us
       </Link>
-    </main>
+    </div>
   );
 }

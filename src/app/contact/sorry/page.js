@@ -1,15 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMeta({
   title: "Thank You for Your Enquiry",
   description: "Information about Artisan Weddings service availability.",
-  robots: { index: false, follow: false },
-};
+  path: "/contact/sorry",
+  noIndex: true,
+});
 
 export default function ContactSorryPage() {
   return (
-    <main className="flex min-h-[70vh] items-center justify-center px-6 py-24 text-center">
+    <div className="flex min-h-[70vh] items-center justify-center px-6 py-24 text-center">
       <div className="max-w-xl">
         <Image
           src="/sorry.png"
@@ -29,6 +31,6 @@ export default function ContactSorryPage() {
           Send another enquiry
         </Link>
       </div>
-    </main>
+    </div>
   );
 }

@@ -1,4 +1,4 @@
-import { ceremonies, films, loveStories } from "@/lib/data";
+import { ceremonies, loveStories } from "@/lib/data";
 import { siteConfig } from "@/lib/seo";
 
 export default function sitemap() {
@@ -35,5 +35,14 @@ export default function sitemap() {
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...ceremonyRoutes, ...storyRoutes];
+  const legalRoutes = [
+    {
+      url: `${baseUrl}/privacy-policy`,
+      lastModified: now,
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+  ];
+
+  return [...staticRoutes, ...ceremonyRoutes, ...storyRoutes, ...legalRoutes];
 }

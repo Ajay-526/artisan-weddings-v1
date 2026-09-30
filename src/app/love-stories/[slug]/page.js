@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { loveStories } from "@/lib/data";
+import { pageMeta } from "@/lib/seo";
 import LoveStoryAlbum from "@/components/love-stories/LoveStoryAlbum";
 
 export function generateStaticParams() {
@@ -19,39 +20,19 @@ export async function generateMetadata({ params }) {
     notFound();
   }
 
-  const title = `${story.names}, ${story.city} | Artisan Weddings`;
-  const description = `${story.quote} Wedding photography in ${story.city}.`;
+  // city is optional in data.js; never let "undefined" reach titles or alts.
+  const place = story.city ? ` in ${story.city}` : "";
 
-  return {
-    title,
-    description,
-
-    alternates: {
-      canonical: `/love-stories/${story.slug}`,
-    },
-
-    openGraph: {
-      title,
-      description,
-      type: "article",
-      url: `/love-stories/${story.slug}`,
-      images: [
-        {
-          url: story.image,
-          width: 1200,
-          height: 630,
-          alt: `${story.names} wedding`,
-        },
-      ],
-    },
-
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      images: [story.image],
-    },
-  };
+  return pageMeta({
+    title: story.city
+      ? `${story.names}, ${story.city}`
+      : `${story.names} Wedding Story`,
+    description: `${story.quote} Wedding photography${place} by Artisan Weddings.`,
+    path: `/love-stories/${story.slug}`,
+    image: story.image,
+    imageAlt: `${story.names} wedding`,
+    type: "article",
+  });
 }
 
 export default async function LoveStoryPage({ params }) {
@@ -69,7 +50,7 @@ export default async function LoveStoryPage({ params }) {
       <header className="relative h-[58vh] min-h-125 overflow-hidden">
         <Image
           src={story.image}
-          alt={`${story.names} wedding in ${story.city}`}
+          alt={`${story.names} wedding${story.city ? ` in ${story.city}` : ""}`}
           fill
           priority
           sizes="100vw"

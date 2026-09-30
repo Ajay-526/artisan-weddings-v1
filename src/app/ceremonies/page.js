@@ -1,13 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ceremonies } from "@/lib/data";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMeta({
   title: "Wedding Ceremonies",
   description:
-    "Roka, Haldi, Mehendi, Sangeet, Wedding and Reception — ideology, tradition and how we photograph each ritual.",
-  alternates: { canonical: "/ceremonies" },
-};
+    "Engagement, Haldi, Mehendi, Sangeet, Wedding and Reception — the traditions behind each ritual and how we photograph them.",
+  path: "/ceremonies",
+});
 
 export default function CeremoniesPage() {
   return (

@@ -1,25 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
 import { loveStories } from "@/lib/data";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata = {
-  title: "Love Stories | Artisan Weddings",
+export const metadata = pageMeta({
+  title: "Love Stories",
   description:
     "Real Indian weddings photographed by Artisan Weddings — couple stories, collages and testimonials from across India.",
-  alternates: {
-    canonical: "/love-stories",
-  },
-  openGraph: {
-    title: "Love Stories | Artisan Weddings",
-    description:
-      "Real Indian weddings photographed by Artisan Weddings — couple stories, collages and testimonials from across India.",
-    type: "website",
-  },
-};
+  path: "/love-stories",
+});
 
 export default function LoveStoriesPage() {
   return (
-    <main className="pt-15 lg:pt-0">
+    <div className="pt-15 lg:pt-0">
       <div className="mx-auto max-w-6xl px-6 py-16">
         {/* Header */}
         <header>
@@ -47,7 +40,7 @@ export default function LoveStoriesPage() {
               <div className="relative h-56 overflow-hidden">
                 <Image
                   src={story.image}
-                  alt={`${story.names} wedding in ${story.city}`}
+                  alt={`${story.names} wedding${story.city ? ` in ${story.city}` : ""}`}
                   fill
                   sizes="(max-width: 640px) 100vw,
                          (max-width: 1024px) 50vw,
@@ -74,6 +67,6 @@ export default function LoveStoriesPage() {
           ))}
         </div>
       </div>
-    </main>
+    </div>
   );
 }

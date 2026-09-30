@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ceremonies } from "@/lib/data";
+import { pageMeta } from "@/lib/seo";
 
 export function generateStaticParams() {
   return ceremonies.map((c) => ({ slug: c.slug }));
@@ -11,16 +12,13 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   const c = ceremonies.find((x) => x.slug === slug);
   if (!c) return { title: "Ceremony" };
-  return {
-    title: `${c.title} photography`,
+  return pageMeta({
+    title: `${c.title} Photography`,
     description: `${c.quote} ${c.description}`,
-    alternates: { canonical: `/ceremonies/${c.slug}` },
-    openGraph: {
-      title: `${c.title} | Artisan Weddings`,
-      description: c.description,
-      images: [{ url: c.image, width: 1200, height: 630, alt: c.title }],
-    },
-  };
+    path: `/ceremonies/${c.slug}`,
+    image: c.image,
+    imageAlt: `${c.title} ceremony photography`,
+  });
 }
 
 export default async function CeremonyPage({ params }) {

@@ -11,6 +11,7 @@ export default function JsonLd() {
         alternateName: siteConfig.tagline,
         url: siteConfig.url,
         image: siteConfig.defaultOgImage,
+        logo: `${siteConfig.url}/web-app-manifest-512x512.png`,
         email: siteConfig.email,
         telephone: siteConfig.phone,
         description: siteConfig.description,

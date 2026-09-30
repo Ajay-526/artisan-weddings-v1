@@ -60,11 +60,12 @@ export default function Header() {
           href="/"
           className="absolute left-1/2 flex -translate-x-1/2 items-center gap-3 lg:static lg:translate-x-0 lg:justify-self-center"
         >
-          <img
+          <Image
             src="/Artisan Weddings.png"
             alt="Artisan Weddings"
             width={100}
             height={100}
+            priority
             className="h-14 w-auto object-contain lg:h-15 px-10"
           />
           {/* <div className="leading-tight">

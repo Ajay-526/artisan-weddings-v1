@@ -23,6 +23,8 @@ export function pageMeta({
   description = siteConfig.description,
   path = "/",
   image,
+  imageAlt,
+  type = "website",
   noIndex = false,
 }) {
   const cleanPath = path.startsWith("/") ? path : `/${path}`;
@@ -32,9 +34,10 @@ export function pageMeta({
     ? title
     : `${title} | ${siteConfig.name}`;
   return {
-    title: fullTitle,
+    // absolute: the full title is already built here, so skip the root
+    // layout's "%s | Artisan Weddings" template (avoids a doubled suffix).
+    title: { absolute: fullTitle },
     description,
-    metadataBase: new URL(siteConfig.url),
     alternates: {
       canonical: url,
     },
@@ -51,7 +54,7 @@ export function pageMeta({
     },
 
     openGraph: {
-      type: "website",
+      type,
       locale: siteConfig.locale,
       url,
       siteName: siteConfig.name,
@@ -63,7 +66,7 @@ export function pageMeta({
               url: ogImage,
               width: 1200,
               height: 630,
-              alt: fullTitle,
+              alt: imageAlt || fullTitle,
             },
           ]
         : [],

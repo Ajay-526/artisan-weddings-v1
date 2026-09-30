@@ -1,31 +1,51 @@
-import Link from "next/link";
-import { ceremonies, loveStories, testimonials, films } from "@/lib/data";
+import Image from "next/image";
+import { testimonials, films } from "@/lib/data";
 import EnquiryForm from "@/components/EnquiryForm";
 import TestimonialSlider from "@/components/TestimonialSlider";
-import FilmPlayer from "@/components/FilmPlayer";
 import Reveal from "@/components/Reveal";
 import ArtisanIntro from "@/components/ArtisanIntro/Artisanintro";
 import OurWorkCarousel from "@/components/OurWorkCarousel/OurWorkCarousel";
 import YoutubePlayer from "@/components/youtube-viewer";
+import { pageMeta, siteConfig } from "@/lib/seo";
+
+export const metadata = pageMeta({
+  title: `${siteConfig.name} — Indian Wedding Photography & Films`,
+  path: "/",
+});
 
 const s3ImagesUrl = process.env.NEXT_PUBLIC_S3_IMAGES_URL;
 
-const heroImg =
-  "https://dkr99ixtwl51t.cloudfront.net/videos/Website%20reel.mp4";
+// Re-encoded copies of "Website reel.mp4" (was 132 MB at 18 Mbps).
+// Phones get the 720p file; everything else the 1080p file.
+const heroVideo = {
+  mobile: "/videos/hero-720.mp4",
+  desktop: "/videos/hero-1080.mp4",
+};
 
 export default function Home() {
   return (
     <>
       <section className="relative z-0 min-h-[calc(100vh-80px)] isolate overflow-hidden text-white">
         <video
-          src={heroImg}
           autoPlay
           muted
           loop
           playsInline
+          preload="auto"
           aria-label="Indian wedding couple"
           className="fixed inset-0 z-0 h-full w-full object-cover kenburns"
-        />
+        >
+          <source
+            src={heroVideo.mobile}
+            type="video/mp4"
+            media="(max-width: 767px)"
+          />
+          <source src={heroVideo.desktop} type="video/mp4" />
+        </video>
+        <h1 className="sr-only">
+          Artisan Weddings — Indian wedding photography and cinematic wedding
+          films
+        </h1>
         <div className="hero-overlay fixed inset-0 z-0" />
         <div className="grain fixed inset-0 z-0" />
 
@@ -61,9 +81,11 @@ export default function Home() {
         <ArtisanIntro />
 
         <section className="relative lg:min-h-screen overflow-hidden px-6 py-20 text-white lg:px-10">
-          <img
+          <Image
             src={`${s3ImagesUrl}/photos/12.webp`}
             alt=""
+            fill
+            sizes="100vw"
             className="absolute inset-0 h-full w-full object-cover"
           />
           <div className="dark-film absolute inset-0" />
@@ -171,16 +193,22 @@ export default function Home() {
 
               <div className="hidden lg:block">
                 <div className="polaroid float-slow relative z-10 ml-auto w-48 -rotate-[8deg] bg-white p-3 pb-7 shadow-[0_18px_30px_rgba(60,45,29,0.20)]">
-                  <img
+                  <Image
                     src={`${s3ImagesUrl}/photos/7.webp`}
                     alt="Newlyweds sharing a moment"
+                    width={168}
+                    height={224}
+                    sizes="168px"
                     className="h-56 w-full object-cover"
                   />
                 </div>
                 <div className="polaroid relative -mt-12 ml-0 w-32 rotate-[7deg] bg-white p-2 pb-5 shadow-[0_14px_28px_rgba(60,45,29,0.18)]">
-                  <img
+                  <Image
                     src={`${s3ImagesUrl}/photos/10.webp`}
                     alt="Wedding detail"
+                    width={112}
+                    height={128}
+                    sizes="112px"
                     className="h-32 w-full object-cover grayscale"
                   />
                 </div>
@@ -190,16 +218,22 @@ export default function Home() {
 
               <div className="hidden lg:block">
                 <div className="polaroid r float-slow relative z-10 mr-auto w-48 rotate-[8deg] bg-white p-3 pb-7 shadow-[0_18px_30px_rgba(60,45,29,0.20)]">
-                  <img
+                  <Image
                     src={`${s3ImagesUrl}/photos/13.webp`}
                     alt="Wedding venue at sunset"
+                    width={168}
+                    height={224}
+                    sizes="168px"
                     className="h-56 w-full object-cover"
                   />
                 </div>
                 <div className="polaroid r relative -mt-16 ml-28 w-32 -rotate-[6deg] bg-white p-2 pb-5 shadow-[0_14px_28px_rgba(60,45,29,0.18)]">
-                  <img
+                  <Image
                     src={`${s3ImagesUrl}/photos/15.webp`}
                     alt="Wedding flowers"
+                    width={112}
+                    height={128}
+                    sizes="112px"
                     className="h-32 w-full object-cover"
                   />
                 </div>

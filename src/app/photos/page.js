@@ -1,4 +1,5 @@
 import PhotosAlbum from "@/components/photos/LoveStoryAlbum";
+import { pageMeta } from "@/lib/seo";
 
 const s3ImagesUrl = process.env.NEXT_PUBLIC_S3_IMAGES_URL;
 
@@ -104,16 +105,17 @@ const photoDimensions = [
   [1800, 2700],
 ];
 
-export const metadata = {
-  title: "Photos",
+export const metadata = pageMeta({
+  title: "Wedding Photos",
   description:
-    "A collection of honest, editorial wedding photographs by Artisan Weddings.",
-  alternates: { canonical: "/photos" },
-};
+    "A collection of honest, editorial Indian wedding photographs by Artisan Weddings — candid moments, rituals and portraits.",
+  path: "/photos",
+  image: `${s3ImagesUrl}/photos/1.webp`,
+});
 
 export default function PhotosPage() {
   return (
-    <main className="bg-[#f7f1e8] lg:pt-0 pt-20 text-[#211916]">
+    <div className="bg-[#f7f1e8] lg:pt-0 pt-20 text-[#211916]">
       <header className="mx-auto max-w-4xl px-6 py-20 text-center lg:py-28">
         <p className="section-label">THE ART OF NOTICING</p>
         <h1 className="mt-4 font-serif text-5xl leading-[0.95] md:text-7xl">
@@ -135,6 +137,6 @@ export default function PhotosPage() {
       </header>
 
       <PhotosAlbum photos={photos} photoDimensions={photoDimensions} />
-    </main>
+    </div>
   );
 }

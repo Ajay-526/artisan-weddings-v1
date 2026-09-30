@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function FilmPlayer({ film, films }) {
@@ -39,12 +40,14 @@ export default function FilmPlayer({ film, films }) {
       >
         {/* Image */}
         <div className="relative aspect-[16/10] overflow-hidden bg-black">
-          <img
+          <Image
             src={
               film.image ||
               `https://i.ytimg.com/vi/${film.youtubeId}/maxresdefault.jpg`
             }
             alt={film.title}
+            fill
+            sizes="(min-width: 768px) 33vw, 100vw"
             className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
           />
 
@@ -166,12 +169,14 @@ export default function FilmPlayer({ film, films }) {
                       >
                         {/* Thumbnail */}
                         <div className="relative h-16 w-28 shrink-0 overflow-hidden rounded-sm bg-black">
-                          <img
+                          <Image
                             src={
                               item.image ||
                               `https://i.ytimg.com/vi/${item.youtubeId}/hqdefault.jpg`
                             }
                             alt={item.title}
+                            fill
+                            sizes="112px"
                             className="h-full w-full object-cover"
                           />
 
