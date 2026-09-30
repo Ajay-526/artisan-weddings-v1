@@ -7,7 +7,10 @@ import {
   faPinterest,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
-import { studio } from "@/lib/studio";
+import { grievance, studio, whatsappDisplay } from "@/lib/studio";
+import CookieSettingsButton from "@/components/CookieSettingsButton";
+
+const grievancePhone = whatsappDisplay(grievance.phone);
 
 const socialLinks = [
   { label: "Instagram", href: studio.instagram, icon: faInstagram },
@@ -71,11 +74,40 @@ export default function Footer() {
               <span>Weddings across India</span>
               <span>© 2026 Artisan Weddings</span>
             </div>
-            <Link href="/privacy-policy" className="underline">
-              Privacy Policy
-            </Link>
+            <nav
+              aria-label="Legal"
+              className="flex flex-wrap justify-center gap-x-4 gap-y-1"
+            >
+              <Link href="/privacy-policy" className="underline">
+                Privacy Notice
+              </Link>
+              <Link href="/terms" className="underline">
+                Terms
+              </Link>
+              <Link href="/data-rights" className="underline">
+                Your data rights
+              </Link>
+              <CookieSettingsButton className="underline" />
+            </nav>
           </div>
         </div>
+      </div>
+      {/* Grievance contact on every page (DPDP Act s.8(9)). */}
+      <div className="border-t border-white/10 px-6 py-3 text-center text-[11px] leading-5 text-[#cbbba6]">
+        Personal data questions or complaints: {grievance.name}
+        {grievance.email ? (
+          <>
+            ,{" "}
+            <a href={`mailto:${grievance.email}`} className="underline">
+              {grievance.email}
+            </a>
+          </>
+        ) : null}
+        {grievancePhone ? <>, WhatsApp {grievancePhone}</> : null}
+        {" · "}
+        <Link href="/data-rights" className="underline">
+          request form
+        </Link>
       </div>
     </footer>
   );

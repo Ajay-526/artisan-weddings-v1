@@ -1,14 +1,27 @@
 "use client";
 
 import Script from "next/script";
+import { useEffect, useState } from "react";
+import { getTrackerConsent, onTrackerConsentChange } from "@/lib/consent";
 
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
 const PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID;
 
+// GTM (analytics) and the Meta Pixel (marketing) are non-essential under the
+// DPDP Act, so neither loads until the visitor opts in via the consent banner.
 export default function Analytics() {
+  const [consent, setConsent] = useState({});
+
+  useEffect(() => {
+    // localStorage is only readable after hydration.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setConsent(getTrackerConsent() || {});
+    return onTrackerConsentChange((purposes) => setConsent(purposes || {}));
+  }, []);
+
   return (
     <>
-      {GTM_ID ? (
+      {GTM_ID && consent.analytics ? (
         <Script id="gtm-base" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
@@ -25,7 +38,7 @@ export default function Analytics() {
         </Script>
       ) : null}
 
-      {PIXEL_ID ? (
+      {PIXEL_ID && consent.marketing ? (
         <Script id="meta-pixel" strategy="lazyOnload">
           {`
             !function(f,b,e,v,n,t,s){
@@ -41,36 +54,6 @@ export default function Analytics() {
             fbq('track', 'PageView');
           `}
         </Script>
-      ) : null}
-    </>
-  );
-}
-
-export function AnalyticsNoscript() {
-  return (
-    <>
-      {GTM_ID ? (
-        <noscript>
-          <iframe
-            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-            title="Google Tag Manager"
-          />
-        </noscript>
-      ) : null}
-      {PIXEL_ID ? (
-        <noscript>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            height="1"
-            width="1"
-            style={{ display: "none" }}
-            src={`https://www.facebook.com/tr?id=${PIXEL_ID}&ev=PageView&noscript=1`}
-            alt=""
-          />
-        </noscript>
       ) : null}
     </>
   );

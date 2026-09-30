@@ -139,7 +139,7 @@ export default function FilmPlayer({ film, films }) {
                 <iframe
                   key={activeFilm.youtubeId}
                   className="h-full w-full"
-                  src={`https://www.youtube.com/embed/${activeFilm.youtubeId}?autoplay=1&rel=0`}
+                  src={`https://www.youtube-nocookie.com/embed/${activeFilm.youtubeId}?autoplay=1&rel=0`}
                   title={activeFilm.title}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen

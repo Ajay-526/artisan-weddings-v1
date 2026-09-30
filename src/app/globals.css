@@ -322,6 +322,15 @@ input:focus, textarea:focus, select:focus {
   border-color: var(--gold);
 }
 
+/* Consent checkboxes: undo the full-width text-field styling above. */
+input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+  padding: 0;
+  accent-color: var(--wine);
+}
+
 .date-input-empty::-webkit-datetime-edit {
   color: transparent;
 }

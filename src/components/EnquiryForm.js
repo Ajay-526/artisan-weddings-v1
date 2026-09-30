@@ -1,11 +1,17 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { studio } from "@/lib/studio";
+import {
+  NOTICE_VERSION,
+  hasTrackerConsent,
+  recordConsent,
+} from "@/lib/consent";
 
 const channels = [
   {
@@ -44,7 +50,7 @@ const locations = {
   Other: ["Other city"],
 };
 
-function buildMessage(data) {
+function buildMessage(data, consent) {
   return [
     "Artisan Weddings enquiry",
     `Name: ${data.name}`,
@@ -56,6 +62,9 @@ function buildMessage(data) {
     `Ceremonies: ${data.ceremonies || "-"}`,
     `Budget: ${data.budget || "-"}`,
     `Note: ${data.note || "-"}`,
+    "",
+    `Consent: enquiry=yes, marketing updates=${consent.purposes.marketing ? "yes" : "no"}`,
+    `Consent ref: ${consent.consentId} (notice ${NOTICE_VERSION})`,
   ].join("\n");
 }
 
@@ -69,7 +78,20 @@ export default function EnquiryForm() {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const data = Object.fromEntries(form.entries());
-    const text = buildMessage(data);
+
+    // DPDP s.6: consent must be a clear affirmative action, per purpose.
+    // The browser's "required" check already blocks submission without it.
+    if (data.consent_enquiry !== "yes") return;
+    const consent = recordConsent({
+      source: "enquiry-form",
+      purposes: {
+        enquiry: true,
+        marketing: data.consent_marketing === "yes",
+      },
+      subjectHint: `${data.name} <${data.email}>`,
+    });
+
+    const text = buildMessage(data, consent);
     const qualified =
       data.state === "Telangana" || data.state === "Andhra Pradesh";
 
@@ -87,8 +109,12 @@ export default function EnquiryForm() {
       window.location.href = `mailto:${studio.email}?subject=${subject}&body=${encodeURIComponent(text)}`;
     }
     if (typeof window !== "undefined") {
-      if (window.fbq) window.fbq("track", "Lead", { content_name: channel });
-      if (window.fbq) {
+      // Trackers only load with banner consent; checked again here so no
+      // enquiry details reach Meta or Google without it.
+      const marketingOk = hasTrackerConsent("marketing") && window.fbq;
+      const analyticsOk = hasTrackerConsent("analytics") && window.dataLayer;
+      if (marketingOk) window.fbq("track", "Lead", { content_name: channel });
+      if (marketingOk) {
         window.fbq(
           "trackCustom",
           qualified ? "QualifiedEnquiry" : "OutOfAreaEnquiry",
@@ -98,7 +124,7 @@ export default function EnquiryForm() {
           },
         );
       }
-      if (window.dataLayer) {
+      if (analyticsOk) {
         window.dataLayer.push({
           event: "enquiry_submit",
           enquiry_channel: channel,
@@ -213,6 +239,50 @@ export default function EnquiryForm() {
         placeholder="Tell us about your wedding..."
         className="sm:col-span-2"
       />
+
+      {/* LEGAL REVIEW: consent wording (DPDP Act s.5 notice, s.6 consent). */}
+      <div className="sm:col-span-2 space-y-3 pt-1 text-xs leading-5 text-[#4a4038]">
+        <p>
+          We use these details only to reply to your enquiry and plan your
+          coverage.{" "}
+          {channel === "whatsapp"
+            ? "They are sent through WhatsApp (Meta)."
+            : channel === "instagram"
+              ? "They are copied for you to paste into Instagram (Meta)."
+              : "They are sent through your email provider."}{" "}
+          See our{" "}
+          <Link href="/privacy-policy" className="underline">
+            Privacy Notice
+          </Link>{" "}
+          for how long we keep them and your rights.
+        </p>
+        <label className="flex cursor-pointer items-start gap-3">
+          <input
+            type="checkbox"
+            name="consent_enquiry"
+            value="yes"
+            required
+            className="mt-0.5"
+          />
+          <span>
+            I am 18 or older and I consent to Artisan Weddings using the
+            details above to respond to my enquiry and plan my wedding
+            coverage. *
+          </span>
+        </label>
+        <label className="flex cursor-pointer items-start gap-3">
+          <input
+            type="checkbox"
+            name="consent_marketing"
+            value="yes"
+            className="mt-0.5"
+          />
+          <span>
+            Optional: send me occasional updates and offers on WhatsApp or
+            email. I can withdraw this any time.
+          </span>
+        </label>
+      </div>
       <div className="sm:col-span-2 flex justify-center pt-2">
         <button type="submit" className="btn-wine">
           {actionLabel} →

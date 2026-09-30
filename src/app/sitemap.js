@@ -36,12 +36,12 @@ export default function sitemap() {
   }));
 
   const legalRoutes = [
-    {
-      url: `${baseUrl}/privacy-policy`,
+    ...["/privacy-policy", "/terms", "/data-rights"].map((path) => ({
+      url: `${baseUrl}${path}`,
       lastModified: now,
       changeFrequency: "yearly",
       priority: 0.3,
-    },
+    })),
   ];
 
   return [...staticRoutes, ...ceremonyRoutes, ...storyRoutes, ...legalRoutes];

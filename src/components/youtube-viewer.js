@@ -9,7 +9,7 @@ export default function YoutubePlayer({ film, compact = false }) {
     >
       <iframe
         className="absolute inset-0 h-full w-full"
-        src={`https://www.youtube.com/embed/${film.youtubeId}?rel=0`}
+        src={`https://www.youtube-nocookie.com/embed/${film.youtubeId}?rel=0`}
         title={film.title}
         loading="lazy"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

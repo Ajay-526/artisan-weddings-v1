@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Analytics from "@/components/Analytics";
 import JsonLd from "@/components/JsonLd";
+import ConsentBanner from "@/components/ConsentBanner";
 import { siteConfig } from "@/lib/seo";
 
 const playfair = Playfair_Display({
@@ -108,9 +109,6 @@ export const viewport = {
   initialScale: 1,
 };
 
-const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
-const META_PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID;
-
 export default function RootLayout({ children }) {
   return (
     <html
@@ -118,35 +116,8 @@ export default function RootLayout({ children }) {
       className={`${playfair.variable} ${cormorant.variable} ${outfit.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-[#faf6ef] text-[#1c1612]">
-        {/* GTM noscript */}
-        {GTM_ID && (
-          <noscript>
-            <iframe
-              src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
-              height="0"
-              width="0"
-              title="Google Tag Manager"
-              style={{
-                display: "none",
-                visibility: "hidden",
-              }}
-            />
-          </noscript>
-        )}
-
-        {/* Meta Pixel noscript */}
-        {META_PIXEL_ID && (
-          <noscript>
-            <img
-              height="1"
-              width="1"
-              style={{ display: "none" }}
-              src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`}
-              alt=""
-            />
-          </noscript>
-        )}
-
+        {/* No <noscript> GTM/Pixel fallbacks: they would track visitors who
+            never saw the consent banner (DPDP Act). */}
         <Analytics />
         <JsonLd />
 
@@ -155,6 +126,7 @@ export default function RootLayout({ children }) {
         <main className="flex-1">{children}</main>
 
         <Footer />
+        <ConsentBanner />
       </body>
     </html>
   );

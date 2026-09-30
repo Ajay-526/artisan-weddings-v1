@@ -26,6 +26,20 @@ const nextConfig = {
   async headers() {
     return [
       {
+        // Baseline security headers (HSTS is already sent by Vercel).
+        // A full Content-Security-Policy is an open item in DPDP_PROGRESS.md.
+        source: "/:path*",
+        headers: [
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          { key: "X-Frame-Options", value: "SAMEORIGIN" },
+          {
+            key: "Permissions-Policy",
+            value: "camera=(), microphone=(), geolocation=(), payment=()",
+          },
+        ],
+      },
+      {
         // Hero video and other static media in /public never change in place.
         source: "/videos/:path*",
         headers: [
