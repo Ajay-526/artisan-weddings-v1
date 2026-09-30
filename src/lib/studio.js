@@ -11,7 +11,7 @@ export const studio = {
   telegram: env(process.env.NEXT_PUBLIC_TELEGRAM).replace(/^@/, ""),
   email: env(process.env.NEXT_PUBLIC_EMAIL),
   phone: env(process.env.NEXT_PUBLIC_PHONE),
-  siteUrl: env(process.env.NEXT_PUBLIC_SITE_URL, "https://artisanweddings.in"),
+  siteUrl: env(process.env.NEXT_PUBLIC_SITE_URL, "https://www.artisanweddings.in"),
   instagram: env(process.env.NEXT_PUBLIC_INSTAGRAM),
   youtube: env(process.env.NEXT_PUBLIC_YOUTUBE),
   facebook: env(process.env.NEXT_PUBLIC_FACEBOOK),
