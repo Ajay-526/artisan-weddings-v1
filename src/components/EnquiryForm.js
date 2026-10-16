@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { studio } from "@/lib/studio";
+import { trackMeta } from "@/lib/metaEvents";
 
 const channels = [
   {
@@ -87,17 +88,16 @@ export default function EnquiryForm() {
       window.location.href = `mailto:${studio.email}?subject=${subject}&body=${encodeURIComponent(text)}`;
     }
     if (typeof window !== "undefined") {
-      if (window.fbq) window.fbq("track", "Lead", { content_name: channel });
-      if (window.fbq) {
-        window.fbq(
-          "trackCustom",
-          qualified ? "QualifiedEnquiry" : "OutOfAreaEnquiry",
-          {
-            state: data.state,
-            city: data.city,
-          },
-        );
-      }
+      // Pixel + Conversions API with a shared event_id; no-op without the Pixel.
+      trackMeta("Lead", { content_name: channel });
+      trackMeta(
+        qualified ? "QualifiedEnquiry" : "OutOfAreaEnquiry",
+        {
+          state: data.state,
+          city: data.city,
+        },
+        { custom: true },
+      );
       if (window.dataLayer) {
         window.dataLayer.push({
           event: "enquiry_submit",
