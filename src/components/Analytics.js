@@ -38,7 +38,24 @@ export default function Analytics() {
             }(window, document,'script',
             'https://connect.facebook.net/en_US/fbevents.js');
             fbq('init', '${PIXEL_ID}');
-            fbq('track', 'PageView');
+            // Same event_id on the Pixel and the Conversions API copy
+            // (/api/meta-events) so Meta counts this PageView once.
+            var awPageViewId = window.crypto && crypto.randomUUID
+              ? crypto.randomUUID()
+              : 'e-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 10);
+            fbq('track', 'PageView', {}, { eventID: awPageViewId });
+            try {
+              var awBody = JSON.stringify({
+                eventName: 'PageView',
+                eventId: awPageViewId,
+                eventSourceUrl: location.href
+              });
+              if (!(navigator.sendBeacon && navigator.sendBeacon('/api/meta-events',
+                  new Blob([awBody], { type: 'application/json' })))) {
+                fetch('/api/meta-events', { method: 'POST', keepalive: true,
+                  headers: { 'Content-Type': 'application/json' }, body: awBody }).catch(function () {});
+              }
+            } catch (e) {}
           `}
         </Script>
       ) : null}
